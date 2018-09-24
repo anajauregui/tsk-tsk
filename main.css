@@ -1,0 +1,10 @@
+/* custom styles for default task box */
+
+.task {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.date-container {
+  text-align: center;
+}
