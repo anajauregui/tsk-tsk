@@ -1,13 +1,21 @@
 
 /* custom styles for default task box */
-
-.task {
-  border: 1px solid black;
-  border-radius: 5px;
+p {
+  margin: 0;
 }
 
-.date-container {
-  text-align: center;
+.task-list {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 200px;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
 
 /*styling for add task button*/
 .btn-secondary {
