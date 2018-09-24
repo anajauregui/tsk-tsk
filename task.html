@@ -39,8 +39,28 @@
 
 
   <div class="add-task-button">
-
+    <button type="button" class="btn btn-secondary"> + ADD Task</button>
   </div>
+
+  <!-- Modal with "show" class added to dispay on load, remove class to hide until button press. -->
+  <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Task Title</h5>
+          <h6 class="modal-title modal-date">Date Added</h6>
+        </div>
+        <div class="modal-body">
+          ...Enter Task Description...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Add Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="task level-1">
 
   </div>
