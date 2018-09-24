@@ -2,4 +2,11 @@
  background-color: rgb(94, 105, 247);
  position: absolute;
  right: 20px;
+
+.modal {
+  display: block;
+}
+
+.modal-date {
+  font-size: small;
 }
