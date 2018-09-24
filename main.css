@@ -1,3 +1,14 @@
+
+/* custom styles for default task box */
+
+.task {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.date-container {
+  text-align: center;
+
 /*styling for add task button*/
 .btn-secondary {
  background-color: rgb(94, 105, 247);
