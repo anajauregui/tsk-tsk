@@ -4,10 +4,16 @@ p {
   margin: 0;
 }
 
-.task-list {
+
+.row > .task-content > .row {
   border: 1px solid black;
   border-radius: 5px;
   height: 200px;
+}
+
+
+.date-container {
+  text-align: center;
 }
 
 .vertical-align {
@@ -17,6 +23,7 @@ p {
   flex-direction: row;
 }
 
+
 /*styling for add task button*/
 .btn-secondary {
  background-color: rgb(94, 105, 247);
@@ -24,15 +31,19 @@ p {
  right: 20px;
 }
 
-.modal {
+/* .modal {
   display: block;
-}
+} */
 
 /*styling for the date on the tasks*/
 .modal-date {
   font-size: small;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b80c62025a91fc082afc5d6233ac936e255d0ada
 /*-------------------------BANNER STYLING-------------------------*/
 /* Gray out the sides on the banner*/
 .side-col {
@@ -59,4 +70,24 @@ p {
 .login-text {
   color: white;
   text-shadow: 1px 1px 10px white;
+=======
+
+/* styling for edit views */
+.edit-content {
+  float: right;
+  display: inline;
+}
+
+.edit-content > button {
+  display: inline-block;
+  margin: 10px;
+}
+
+.edit-icon {
+  opacity: .0;
+}
+
+/* makes icon visible on hover of task*/
+.edit-icon:hover, .task-content:hover + .edit-icon{
+  opacity: 1;
 }
