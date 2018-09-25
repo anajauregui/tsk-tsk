@@ -1,14 +1,14 @@
 
 /* custom styles for default task box */
 
-.task {
+.row > .task-content > .row {
   border: 1px solid black;
   border-radius: 5px;
 }
 
 .date-container {
   text-align: center;
-
+}
 /*styling for add task button*/
 .btn-secondary {
  background-color: rgb(94, 105, 247);
@@ -16,11 +16,32 @@
  right: 20px;
 }
 
-.modal {
+/* .modal {
   display: block;
-}
+} */
 
 /*styling for the date on the tasks*/
 .modal-date {
   font-size: small;
+}
+
+
+/* styling for edit views */
+.edit-content {
+  float: right;
+  display: inline;
+}
+
+.edit-content > button {
+  display: inline-block;
+  margin: 10px;
+}
+
+.edit-icon {
+  opacity: .0;
+}
+
+/* makes icon visible on hover of task*/
+.edit-icon:hover, .task-content:hover + .edit-icon{
+  opacity: 1;
 }
