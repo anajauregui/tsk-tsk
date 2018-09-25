@@ -1,27 +1,9 @@
 /* custom styles for default task box */
-p {
-  margin: 0;
-}
-
 
 .row > .task-content > .row {
   border: 1px solid black;
   border-radius: 5px;
-  height: 200px;
 }
-
-
-.date-container {
-  text-align: center;
-}
-
-.vertical-align {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
-
 
 /*styling for add task button*/
 .btn-secondary {
@@ -30,15 +12,10 @@ p {
  right: 20px;
 }
 
-/* .modal {
-  display: block;
-} */
-
 /*styling for the date on the tasks*/
 .modal-date {
   font-size: small;
 }
-
 
 /* styling for edit views */
 .edit-content {
