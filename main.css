@@ -32,3 +32,30 @@ p {
 .modal-date {
   font-size: small;
 }
+
+.container {
+  border: black 1px solid;
+}
+
+/*-------------------------BANNER STYLING-------------------------*/
+/* Gray out the sides on the banner*/
+.side-col {
+  background-color: gray;
+  opacity: .5;
+  height: 100%;
+}
+
+/*We can change the background of our banner here to whatever we want!*/
+.banner {
+  background-image: url(https://placeimg.com/1200/300/arch);
+}
+
+/*Set the height of the row containing the log in form */
+.log-in {
+  height: 300px;
+}
+
+.login-text {
+  color: white;
+  text-shadow: 1px 1px 10px white;
+}
