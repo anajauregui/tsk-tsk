@@ -17,6 +17,34 @@
   font-size: small;
 }
 
+/*-------------------------BANNER STYLING-------------------------*/
+/* Gray out the sides on the banner*/
+.side-col {
+  background-color: gray;
+  opacity: .5;
+  height: 100%;
+}
+
+/*We can change the background of our banner here to whatever we want!*/
+.banner {
+  background-image: url(https://placeimg.com/1200/300/arch);
+
+}
+
+/*Set the height of the row containing the log in form */
+.log-in {
+  height: 30vh;
+  min-height:5em;
+  width: 100%;
+  overflow: scroll;
+  
+}
+
+.login-text {
+  color: white;
+  text-shadow: 1px 1px 10px white;
+}
+
 /* styling for edit views */
 .edit-content {
   float: right;
