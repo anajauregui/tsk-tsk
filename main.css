@@ -1,8 +1,6 @@
 /* custom styles for default task box */
-
-.row > .task-content > .row {
-  border: 1px solid black;
-  border-radius: 5px;
+ .task-content {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
 }
 
 /*styling for add task button*/
@@ -12,6 +10,46 @@
  right: 20px;
 }
 
+/*-------------------------CHECKBOX STYLING-----------------------*/
+.complete-box > input {
+  opacity: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: absolute;
+  cursor: pointer;
+  height: 6vh;
+  width: 6vh;
+}
+
+.checkmark {
+  display: inline-block;
+  height: 6vh;
+  width: 6vh;
+  background-color: #b2d1d1;
+  border-radius: 5px;
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, .37);
+  box-sizing: content-box;
+  text-align: center;
+  font-weight: bold;
+}
+
+.complete-box:hover input ~ .checkmark {
+  background-color: #95afaf;
+}
+
+.complete-box input:checked ~ .checkmark {
+  background-color: white;
+}
+
+.checkmark:after {
+  content: "✓";
+  visibility: hidden;
+  color: #95afaf;
+}
+
+.complete-box input:checked ~ .checkmark:after {
+  visibility: visible;
+}
 /*styling for the date on the tasks*/
 .modal-date {
   font-size: small;
@@ -25,7 +63,8 @@
 
 .edit-content > button {
   display: inline-block;
-  margin: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .edit-icon {
@@ -35,4 +74,36 @@
 /* makes icon visible on hover of task*/
 .edit-icon:hover, .task-content:hover + .edit-icon{
   opacity: 1;
+}
+
+/*  Level 4 Task Styling*/
+
+.level-4 {
+  background-color: #e87537;
+  color: #950000;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.level-4 > .row {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 40vh;
+}
+
+.level-4 > .row > .task-name > p {
+  font-size: 250%;
+  text-align: center;
+}
+
+.level-4 > .row > .task-date-container > .task-date > .month {
+  font-size: 120%;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: -5px
+}
+
+.level-4 > .row > .task-date-container > .task-date > .day {
+  font-size: 250%;
+  text-align: center;
 }
