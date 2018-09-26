@@ -96,14 +96,15 @@
   text-align: center;
 }
 
-.level-4 > .row > .task-date-container > .task-date > .month {
-  font-size: 120%;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: -5px
-}
-
-.level-4 > .row > .task-date-container > .task-date > .day {
+.level-4 > .row > .task-date-container > .task-date > .counter {
   font-size: 250%;
   text-align: center;
+  line-height: 100%;
+}
+
+.level-4 > .row > .task-date-container > .task-date > .days-old {
+  font-size: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 90%;
 }
