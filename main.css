@@ -11,7 +11,17 @@
   background-color: #ffc550;
   border-radius: 5px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  font-size: 2em;
+  font-size: 2.5em;
+}
+
+.days-old-count {
+  padding: 10px;
+}
+
+.days-old {
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 0.5em;
 }
 
 /*styling for add task button*/
