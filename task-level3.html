@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <title>Tsk-Tsk To-Do App</title>
+</head>
+
+<body>
+
+  <!-- This is where a task div begins. It should encompass editing a task as well as the standard information. It should not include any modals at this stage -->
+  <div class="container task">
+    <div class="row">
+      <div class = "col-10 task-content level-3">
+        <div class = "row">
+          <div class="col-1 d-flex justify-content-center">
+            <input type="checkbox">
+          </div>
+          <div class="col-9 d-flex">
+            <p class="m-0 align-self-center">Laundry</p>
+          </div>
+          <div class="col-2 d-flex justify-content-center">
+            <div class="align-self-center text-center">
+              <p class="m-0">10</p>
+              <p class="m-0">Days Old</p>
+            </div>
+          </div>
+          <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
+          <!-- <div class= "col-12">
+            <div class = "edit-content">
+              <button type="button" class="btn done-editing">Done</button>
+              <button type="button" class="btn delete-task-button">Delete</button>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+      <div class = "col-1 edit-icon">
+        <img src= "assets/edit.png">
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

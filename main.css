@@ -1,8 +1,17 @@
 /* custom styles for default task box */
 
-.row > .task-content > .row {
+/* .row > .task-content > .row {
   border: 1px solid black;
   border-radius: 5px;
+} */
+
+/* styling for level-3 task */
+.level-3 {
+  color: #581500;
+  background-color: #ffc550;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+  font-size: 2em;
 }
 
 /*styling for add task button*/
