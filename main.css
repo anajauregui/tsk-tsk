@@ -24,6 +24,9 @@ body {
 .task-description{
   /* Potential styling */
 }
+.level-one {
+  height: 0;
+}
 
 .test-border {
   border: 2px solidn red;
@@ -102,6 +105,7 @@ body {
 .edit-content > button {
   display: inline-block;
   margin: 2px;
+  float: right;
 }
 
 .edit-icon {

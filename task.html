@@ -53,63 +53,59 @@
   </div>
 
 <br />
+<br />
+
+
 
 <!-----Jose's custom task container!!!!----->
 <div class="container task-content">
   <!--First row containing checkbox, Task Title, Date and Edit Icon-->
+  <div class="row">
+    <div class="col-11 task-content level-1-column">
+    <!-- <p>Level 1 column</p> -->
+        <div class="row" type="button" data-toggle="hidden" data-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
+          <div class="col-md-1 task-checkbox border-test">
+            <p>&quot;Checkbox&quot;</p>
 
-<div class="row">
-  <div class="col-12 task-content">
-  <p>Level 1 column</p>
-      <div class="row" type="button" data-toggle="hidden" data-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
-        <div class="col-md-1 task-checkbox border-test">
-          <p>&quot;Checkbox&quot;</p>
-
-        </div>
-        <div class="col-md-8 vertical-align task-name border-test">
-          <p>Task Name</p>
-
-        </div>
-        <div class="col-md-2 task-date border-test">
-          <p>Date</p>
-
-        </div>
-
-          <div class = "edit-icon border-test">
-            <img src="assets/edit.png" alt="Edit Icon">
+          </div>
+          <div class="col-md-8 vertical-align task-name border-test">
+            <p>Task Name</p>
           </div>
 
+          <div class="col-md-3 task-date vertical-align border-test">
+            <p>Date</p>
+          </div>
+
+        </div>
+        <!-----End of first row!!!----->
+
+        <!--Second row containing Task Description, last column is empty on purpose-->
+        <div class="row" id="collapseDescription">
+          <div class="col-md-1 task-content">
+            <p>&quot;empty space&quot;</p>
+
+          </div>
+          <div class="col-xs-12 col-md-8 vertical-align task-content">
+            <p>Task Description</p>
+
+          </div>
+          <div class="col-xs-12 col-md-3 task-content">
+            <div class = "edit-content">
+              <button type="button" class="btn btn-primary">Done</button>
+              <button type="button" class="btn btn-primary">Delete</button>
+            </div>
+          </div>
+        </div>
       </div>
-
-
-
-  <br />
-  <!--Second row containing Task Title,-->
-  <div class="row" id="collapseDescription">
-    <div class="col-md-1 task-content">
-      <p>&quot;empty space&quot;</p>
-
-    </div>
-    <div class="col-xs-12 col-md-8 vertical-align task-content">
-      <p>Task Description</p>
-
-    </div>
-    <div class="col-xs-12 col-md-2 task-content">
-      <div class = "edit-content">
-        <button type="button" class="btn done-editing">Done</button>
-        <button type="button" class="btn delete-task-button">Delete</button>
-      </div>
-    </div>
-
-    <div class="col-md-1 task-content-test">
-      <p>"empty space""</p>
-    </div>
-
+      <!-- The icon is not in a column so it can sit outside next to the task  -->
+            <div class = "edit-icon border-test">
+              <img src="assets/edit.png" alt="Edit Icon">
+            </div>
   </div>
+  <!--Second row containing Task Title,-->
 </div>
 
-</div>
-</div>
+
 <!-----End of Jose's custom task container----->
 
   <!-- Delete modal with "show" class added to dispay on load, remove class to hide until button press. -->
