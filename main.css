@@ -61,7 +61,6 @@
   content: "✓";
   visibility: hidden;
   color: #95afaf;
-
 }
 
 .complete-box input:checked ~ .checkmark:after {
