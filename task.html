@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
   <title>Tsk-Tsk To-Do App</title>
 </head>
 <nav>
@@ -13,25 +13,42 @@
 </nav>
 
 <body>
+  <!-- <div class="add-task-button">
 
-  <div class="container level-1">
-    <div class="row vertical-align task-list">
-      <div class="col-1">
-        <input type="checkbox">
-      </div>
-      <div class="col-9">
-        <p>Laundry</p>
-      </div>
-      <div class="col-2">
-        <div>
-          <p class="month">Sept</p>
-          <p class="day align-middle">24</p>
+  </div> -->
+
+  <!-- This is where a task div begins. It should encompass editing a task as well as the standard information. It should not include any modals at this stage -->
+  <div class="container task">
+    <div class="row">
+      <div class = "col-10 task-content level-1">
+        <div class = "row">
+          <div class="col-1 d-flex justify-content-center">
+            <input type="checkbox">
+          </div>
+          <div class="col-9 d-flex">
+            <p class="m-0 align-self-center">Laundry</p>
+          </div>
+          <div class="col-2 d-flex justify-content-center">
+            <div class="align-self-center text-center">
+              <p class="m-0">Sept</p>
+              <p class="m-0">24</p>
+            </div>
+          </div>
+          <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
+          <div class= "col-12">
+            <div class = "edit-content">
+              <button type="button" class="btn done-editing">Done</button>
+              <button type="button" class="btn delete-task-button">Delete</button>
+            </div>
+          </div>
+
         </div>
+      </div>
+      <div class = "col-1 edit-icon">
+        <img src= "https://via.placeholder.com/50x50">
       </div>
     </div>
   </div>
-
-
 
   <!-- Delete modal with "show" class added to dispay on load, remove class to hide until button press. -->
   <div class="modal fade" tabindex="-1" role="dialog" id="delete-modal-1" aria-labelledby="delete-modal-label" aria-hidden="true">
@@ -56,11 +73,13 @@
 
  <br>
 
+
   <!--
   <div class="add-task-button">
     <button type="button" class="btn btn-secondary"> + ADD Task</button>
   </div>
 -->
+
 
   <!-- Modal with "show" class added to dispay on load, remove class to hide until button press. -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,16 +104,12 @@
 
   </div>
   <!-- <div class="task level-2">
-
   </div>
   <div class="task level-3">
-
   </div>
   <div class="task level-4">
-
   </div>
   <div class="task level-5">
-
   </div> -->
 
 

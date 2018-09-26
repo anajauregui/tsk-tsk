@@ -1,20 +1,8 @@
-
 /* custom styles for default task box */
-p {
-  margin: 0;
-}
 
-.task-list {
+.row > .task-content > .row {
   border: 1px solid black;
   border-radius: 5px;
-  height: 200px;
-}
-
-.vertical-align {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
 }
 
 /*styling for add task button*/
@@ -24,11 +12,55 @@ p {
  right: 20px;
 }
 
-.modal {
-  display: block;
-}
-
 /*styling for the date on the tasks*/
 .modal-date {
   font-size: small;
+}
+
+/*-------------------------BANNER STYLING-------------------------*/
+/* Gray out the sides on the banner*/
+.side-col {
+  background-color: gray;
+  opacity: .5;
+  height: 100%;
+}
+
+/*We can change the background of our banner here to whatever we want!*/
+.banner {
+  background-image: url(https://placeimg.com/1200/300/arch);
+
+}
+
+/*Set the height of the row containing the log in form */
+.log-in {
+  height: 30vh;
+  min-height:5em;
+  width: 100%;
+  overflow: scroll;
+  
+}
+
+.login-text {
+  color: white;
+  text-shadow: 1px 1px 10px white;
+}
+
+/* styling for edit views */
+.edit-content {
+  float: right;
+  display: inline;
+}
+
+.edit-content > button {
+  display: inline-block;
+  margin: 10px;
+}
+
+.edit-icon {
+  opacity: .0;
+}
+
+/* makes icon visible on hover of task*/
+.edit-icon:hover, .task-content:hover + .edit-icon{
+  opacity: 1;
 }
