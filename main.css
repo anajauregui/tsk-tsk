@@ -45,6 +45,8 @@
   border-radius: 5px;
   box-shadow: inset 3px 3px 5px rgba(0, 0, 0, .37);
   box-sizing: content-box;
+  text-align: center;
+  font-weight: bold;
 }
 
 .complete-box:hover input ~ .checkmark {
@@ -58,12 +60,12 @@
 .checkmark:after {
   content: "✓";
   visibility: hidden;
-  color: black;
+  color: #95afaf;
+
 }
 
 .complete-box input:checked ~ .checkmark:after {
-visibility: visible;
-text-align: center;
+  visibility: visible;
 }
 /*-------------------------BANNER STYLING-------------------------*/
 /* Gray out the sides on the banner*/
