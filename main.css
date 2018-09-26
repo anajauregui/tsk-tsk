@@ -17,6 +17,14 @@
   font-size: small;
 }
 
+/*Vertically align content inside of rows*/
+.vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
 /*-------------------------BANNER STYLING-------------------------*/
 /* Gray out the sides on the banner*/
 .side-col {
@@ -37,7 +45,7 @@
   min-height:5em;
   width: 100%;
   overflow: scroll;
-  
+
 }
 
 .login-text {
