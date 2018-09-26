@@ -18,7 +18,7 @@
   </div> -->
 
   <!-- This is where a task div begins. It should encompass editing a task as well as the standard information. It should not include any modals at this stage -->
-  <div class="container">
+  <div class="container task-content">
 
     <div class="row">
       <div class = "col-10 task-content level-1">
@@ -57,38 +57,48 @@
 <!-----Jose's custom task container!!!!----->
 <div class="container task-content">
   <!--First row containing checkbox, Task Title, Date and Edit Icon-->
-  <div class="row">
-    <div class="col-md-1 task-content">
-      <p>&quot;Checkbox&quot;</p>
 
-    </div>
-    <div class="col-md-8 task-content" type="button" data-toggle="hidden" data-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
-      <p>Task Name</p>
+<div class="row">
+  <div class="col-12 task-content">
+  <p>Level 1 column</p>
+      <div class="row" type="button" data-toggle="hidden" data-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
+        <div class="col-md-1 task-checkbox border-test">
+          <p>&quot;Checkbox&quot;</p>
 
-    </div>
-    <div class="col-md-2 task-content">
-      <p>Date</p>
+        </div>
+        <div class="col-md-8 vertical-align task-name border-test">
+          <p>Task Name</p>
 
-    </div>
-    <div class="col-md-1 task-content-test">
-      <div class = "col-1 edit-icon">
-        <img src= "https://via.placeholder.com/50x50">
+        </div>
+        <div class="col-md-2 task-date border-test">
+          <p>Date</p>
+
+        </div>
+
+          <div class = "edit-icon border-test">
+            <img src="assets/edit.png" alt="Edit Icon">
+          </div>
+
       </div>
-    </div>
-  </div>
+
+
+
+  <br />
   <!--Second row containing Task Title,-->
-  <div class="row show" id="collapseDescription">
+  <div class="row" id="collapseDescription">
     <div class="col-md-1 task-content">
       <p>&quot;empty space&quot;</p>
 
     </div>
-    <div class="col-xs-12 col-md-8 task-content">
+    <div class="col-xs-12 col-md-8 vertical-align task-content">
       <p>Task Description</p>
 
     </div>
     <div class="col-xs-12 col-md-2 task-content">
-      <p>Done/Delete Buttons</p>
-
+      <div class = "edit-content">
+        <button type="button" class="btn done-editing">Done</button>
+        <button type="button" class="btn delete-task-button">Delete</button>
+      </div>
     </div>
 
     <div class="col-md-1 task-content-test">
@@ -96,6 +106,9 @@
     </div>
 
   </div>
+</div>
+
+</div>
 </div>
 <!-----End of Jose's custom task container----->
 

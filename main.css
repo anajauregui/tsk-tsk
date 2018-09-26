@@ -3,21 +3,42 @@ body {
   background-color: #B2D1D1;
 }
 
-
-.task-content {
+.task-content{
   border: 1px solid;
   border-radius: 5px;
   background-color: #48AEAE;
+}
+
+.task-checkbox{
+  /* Potential styling */
+  align-items:
+}
+
+.task-name{
+  /* Potential styling */
+}
+
+.task-date {
+  /* Potential styling */
+}
+.task-description{
+  /* Potential styling */
+}
+
+.test-border {
+  border: 2px solidn red;
+  border-radius: 5px;
+
 }
 .task-content-test {
   border: 2px solid green;
   border-radius: 5px;
   background-color: #B2D1D1;
-  margin-left: 0;
-  padding-left: 0;
 }
 .border-test {
-  border-collapse: collapse;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #48AEAE;
 }
 
 /*styling for add task button*/
@@ -73,13 +94,14 @@ body {
 
 /* styling for edit views */
 .edit-content {
+  align-content: center;
   float: right;
   display: inline;
 }
 
 .edit-content > button {
   display: inline-block;
-  margin: 10px;
+  margin: 2px;
 }
 
 .edit-icon {
