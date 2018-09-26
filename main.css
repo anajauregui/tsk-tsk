@@ -3,6 +3,9 @@ body {
   background-color: #B2D1D1;
 }
 
+#taskDescriptionRow {
+  height: 150px;
+}
 .task-content{
   border: 1px solid;
   border-radius: 5px;
@@ -97,15 +100,15 @@ body {
 
 /* styling for edit views */
 .edit-content {
-  align-content: center;
-  float: right;
-  display: inline;
+  position: relative;
+
 }
 
 .edit-content > button {
-  display: inline-block;
-  margin: 2px;
   float: right;
+  margin: 2px;
+  position: relative;
+  bottom: -100px;
 }
 
 .edit-icon {
