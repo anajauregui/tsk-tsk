@@ -18,10 +18,11 @@
   </div> -->
 
   <!-- This is where a task div begins. It should encompass editing a task as well as the standard information. It should not include any modals at this stage -->
-  <div class="container task">
+  <div class="container">
+
     <div class="row">
       <div class = "col-10 task-content level-1">
-        <div class = "row">
+        <div class = "row level-1 task-content task">
           <div class="col-1 d-flex justify-content-center">
             <input type="checkbox">
           </div>
@@ -48,7 +49,55 @@
         <img src= "https://via.placeholder.com/50x50">
       </div>
     </div>
+
   </div>
+
+<br />
+
+<!-----Jose's custom task container!!!!----->
+<div class="container task-content">
+  <!--First row containing checkbox, Task Title, Date and Edit Icon-->
+  <div class="row">
+    <div class="col-md-1 task-content">
+      <p>&quot;Checkbox&quot;</p>
+
+    </div>
+    <div class="col-md-8 task-content" type="button" data-toggle="hidden" data-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
+      <p>Task Name</p>
+
+    </div>
+    <div class="col-md-2 task-content">
+      <p>Date</p>
+
+    </div>
+    <div class="col-md-1 task-content-test">
+      <div class = "col-1 edit-icon">
+        <img src= "https://via.placeholder.com/50x50">
+      </div>
+    </div>
+  </div>
+  <!--Second row containing Task Title,-->
+  <div class="row show" id="collapseDescription">
+    <div class="col-md-1 task-content">
+      <p>&quot;empty space&quot;</p>
+
+    </div>
+    <div class="col-xs-12 col-md-8 task-content">
+      <p>Task Description</p>
+
+    </div>
+    <div class="col-xs-12 col-md-2 task-content">
+      <p>Done/Delete Buttons</p>
+
+    </div>
+
+    <div class="col-md-1 task-content-test">
+      <p>"empty space""</p>
+    </div>
+
+  </div>
+</div>
+<!-----End of Jose's custom task container----->
 
   <!-- Delete modal with "show" class added to dispay on load, remove class to hide until button press. -->
   <div class="modal fade" tabindex="-1" role="dialog" id="delete-modal-1" aria-labelledby="delete-modal-label" aria-hidden="true">

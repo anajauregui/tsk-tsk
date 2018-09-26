@@ -1,8 +1,23 @@
 /* custom styles for default task box */
+body {
+  background-color: #B2D1D1;
+}
 
-.row > .task-content > .row {
-  border: 1px solid black;
+
+.task-content {
+  border: 1px solid;
   border-radius: 5px;
+  background-color: #48AEAE;
+}
+.task-content-test {
+  border: 2px solid green;
+  border-radius: 5px;
+  background-color: #B2D1D1;
+  margin-left: 0;
+  padding-left: 0;
+}
+.border-test {
+  border-collapse: collapse;
 }
 
 /*styling for add task button*/
@@ -25,6 +40,9 @@
   flex-direction: row;
 }
 
+.task {
+  background-color: #48AEAE;
+}
 /*-------------------------BANNER STYLING-------------------------*/
 /* Gray out the sides on the banner*/
 .side-col {
