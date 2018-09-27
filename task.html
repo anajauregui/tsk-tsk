@@ -25,10 +25,11 @@
 
 <body>
 
-  <!-- add task button -->
+  <!-- add task button properly hooked up -->
   <div class="add-task-button">
-    <button type="button" class="btn btn-secondary">
-      <img src="assets/add.png" alt="add symbol">
+
+    <button type="button" class="btn btn-secondary d-none d-sm-none d-md-block "  data-toggle="modal" data-target="#add-task-modal">
+      <img src="assets/add.png" alt="add symbol"/>
       Add Task
     </button>
   </div>
@@ -46,10 +47,12 @@
             <p class = "task-name">Laundry</p>
           </div>
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
+
           <div class= "col-12 collapse" id="edit-this-task-id-5">
             <div class = "edit-content">
               <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-5">Done</button>
               <button type="button" class="btn delete-task-button">Delete</button>
+
             </div>
           </div>
 
@@ -118,6 +121,7 @@
 
         </div>
       </div>
+
       <div class = "col-1 edit-container edit-icon">
         <img src= "assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-3">
       </div>

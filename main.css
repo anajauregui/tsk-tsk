@@ -37,6 +37,16 @@
   top: 100px;
   height: 70px;
   width: 150px;
+  z-index: 1000;
+}
+
+/* styling for nave add task button */
+.btn-secondary.btn-nav {
+  position: static;
+  right: unset;
+  top: unset;
+  height: unset;
+  width: unset;
 }
 
 .btn-secondary:hover {
