@@ -89,11 +89,24 @@
   margin-top: auto;
   margin-bottom: auto;
   height: 40vh;
+
 }
 
-.level-4 > .row > .task-name > p {
+.level-4 > .row > .col-9 {
   font-size: 250%;
+  margin-top: 0px;
+  margin-bottom: auto;
   text-align: center;
+  line-height: 130%;
+}
+
+.level-4 > .row > .col-9 > .counter {
+  margin-bottom: 0;
+  font-size: 130%
+}
+
+.level-4 > .row > .col-9 > .task-name {
+  margin-bottom: 0;
 }
 
 .level-4 > .row > .task-date-container > .task-date > .counter {
