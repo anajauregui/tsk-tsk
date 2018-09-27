@@ -27,11 +27,11 @@
 
   <!-- add task button -->
   <div class="add-task-button">
-    <button type="button" class="btn btn-secondary">
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#add-task-modal" >
       <img src="assets/add.png" alt="add symbol">
       Add Task
     </button>
-  </div>
+  </div> 
 
   <div class="container task">
     <div class="row">
@@ -123,7 +123,7 @@
     </div>
   </div>
 
-  <!-- Modal with "show" class added to dispay on load, remove class to hide until button press. -->
+  <!-- Add Task modal, hooked up with jquery -->
   <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -135,7 +135,7 @@
           ...Enter Task Description...
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-primary">Add Task</button>
         </div>
       </div>
