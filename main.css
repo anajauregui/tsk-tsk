@@ -61,7 +61,6 @@
 }
 
 .delete-task-button ,.done-editing {
-  padding: ;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
   background-color: rgb(42, 176, 44);
 }
