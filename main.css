@@ -3,7 +3,7 @@
  .task-content {
   border-radius: 5px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  margin: 10px auto;
+  margin: 10px 0px;
 }
 
 
@@ -178,12 +178,19 @@
 .edit-content > button {
   display: inline-block;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .edit-icon {
   opacity: .0;
+  margin-top: 10px;
 }
+
+.edit-container {
+  height: 0;
+}
+
+
 
 /* makes icon visible on hover of task*/
 .edit-icon:hover, .task-content:hover + .edit-icon{
