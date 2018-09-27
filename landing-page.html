@@ -6,12 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
   <link rel="stylesheet" href="main.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+     $(function(){
+     $("#landing-nav").load("nav.html");
+     });
+  </script>
+
   <title>Tsk-Tsk To-Do App</title>
 </head>
 
-<nav>
+<div id="landing-nav">
   <!--do not code nav here, keep it in nav.html and pull it in as a reference  -->
-</nav>
+</div>
 
 <body>
 
@@ -19,9 +30,7 @@
   <div class="login-fields">
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-signup">
-      Sign up
-    </button>
+    <!-- ^^^^moved to nav.html^^^^ -->
 
     <!-- Modal -->
     <div class="modal fade" id="modal-signup" tabindex="-1" role="dialog" aria-labelledby="modal-label-signup" aria-hidden="true">

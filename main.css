@@ -72,3 +72,13 @@
 .edit-icon:hover, .task-content:hover + .edit-icon{
   opacity: 1;
 }
+
+/*-------------- body padding for nav bar --------------*/
+body{
+  padding-top: 70px;
+}
+
+/*---------- navbar  ---------*/
+@media only screen and (max-width: 768px){
+  
+}
