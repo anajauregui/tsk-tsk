@@ -46,24 +46,20 @@
             <p class = "counter"> 24 DAYS OLD </p>
             <p class = "task-name">Laundry</p>
           </div>
-          <!-- <div class="col-2 d-flex justify-content-center task-date-container">
-            <div class="align-self-center text-center task-date">
-              <p class="m-0 counter">24</p>
-              <p class="m-0 days-old">days<br>old</p>
-            </div>
-          </div> -->
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-           <div class= "col-12">
+
+          <div class= "col-12 collapse" id="edit-this-task-id-5">
             <div class = "edit-content">
-              <button type="button" class="btn done-editing">Done</button>
-              <button type="button" class="btn delete-task-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+              <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-5">Done</button>
+              <button type="button" class="btn delete-task-button">Delete</button>
+
             </div>
           </div>
 
         </div>
       </div>
       <div class = "col-1 edit-icon">
-        <img src= "assets/edit.png"/>
+        <img src= "assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-5">
       </div>
     </div>
   </div>
@@ -81,64 +77,18 @@
             <p class = "counter"> 24 DAYS OLD </p>
             <p class = "task-name">Laundry</p>
           </div>
-          <!-- <div class="col-2 d-flex justify-content-center task-date-container">
-            <div class="align-self-center text-center task-date">
-              <p class="m-0 counter">24</p>
-              <p class="m-0 days-old">days<br>old</p>
-            </div>
-          </div> -->
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-          <!-- <div class= "col-12">
+          <div class= "col-12 collapse" id="edit-this-task-id-4">
             <div class = "edit-content">
-              <button type="button" class="btn done-editing">Done</button>
+              <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-4">Done</button>
               <button type="button" class="btn delete-task-button">Delete</button>
             </div>
-          </div> -->
+          </div>
 
         </div>
       </div>
-      <div class = "col-1 edit-icon">
-        <img src= "assets/edit.png"/>
-      </div>
-    </div>
-  </div>
-
-  <!-- Delete modal with "show" class added to dispay on load, remove class to hide until button press. -->
-  <div class="modal fade" tabindex="-1" role="dialog" id="delete-task-modal" aria-labelledby="delete-modal-label" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="delete-modal-label">Delete Task?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Would you like to delete this task.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Delete. :(</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Add Task modal, hooked up with jQuery -->
-  <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="add-task-modal-label">Task Title</h5>
-          <h6 class="modal-title modal-date">Date Added</h6>
-        </div>
-        <div class="modal-body">
-          ...Enter Task Description...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary">Add Task</button>
-        </div>
+      <div class = "col-1 edit-container edit-icon">
+        <img src= "assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-4">
       </div>
     </div>
   </div>
@@ -162,17 +112,18 @@
             </div>
           </div>
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-          <!-- <div class= "col-12">
+          <div class= "col-12 collapse" id="edit-this-task-id-3">
             <div class = "edit-content">
-              <button type="button" class="btn done-editing">Done</button>
+              <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-3">Done</button>
               <button type="button" class="btn delete-task-button">Delete</button>
             </div>
-          </div> -->
+          </div>
 
         </div>
       </div>
-      <div class = "col-1 edit-icon">
-        <img src= "assets/edit.png"/>
+
+      <div class = "col-1 edit-container edit-icon">
+        <img src= "assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-3">
       </div>
     </div>
   </div>
@@ -198,21 +149,59 @@
               </div>
             </div>
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-            <!-- <div class= "col-12">
+            <div class= "col-12 collapse" id="edit-this-task-id-2">
               <div class = "edit-content">
-                <button type="button" class="btn done-editing">Done</button>
+                <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-2">Done</button>
                 <button type="button" class="btn delete-task-button">Delete</button>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
-        <div class = "col-1 edit-icon">
-          <img src= "assets/edit.png"/>
+        <div class = "col-1 edit-container edit-icon">
+          <img src= "assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-2">
         </div>
       </div>
     </div>
 
+    <!-- Delete modal with "show" class added to dispay on load, remove class to hide until button press. -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="delete-modal-1" aria-labelledby="delete-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="delete-modal-label">Delete Task?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Would you like to delete this task.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Delete. :(</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal with "show" class added to dispay on load, remove class to hide until button press. -->
+    <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="add-task-modal-label">Task Title</h5>
+            <h6 class="modal-title modal-date">Date Added</h6>
+          </div>
+          <div class="modal-body">
+            ...Enter Task Description...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Add Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   <footer>
