@@ -29,7 +29,7 @@
 /*styling for add task button*/
 .btn-secondary {
   color: #3a3a3a;
-  background-color: #fff;
+  background-color: #63DB63;
   border: none;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
   position: fixed;
@@ -37,6 +37,10 @@
   top: 100px;
   height: 70px;
   width: 150px;
+}
+
+.btn-secondary:hover {
+  background-color: #63DB63;
 }
 
 .btn-secondary img {
