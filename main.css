@@ -3,6 +3,8 @@ body {
   background-color: #B2D1D1;
 }
 
+
+/*------ Styling for Jose's custom task box ------*/
 #taskDescriptionRow {
   height: 150px;
 }
@@ -46,6 +48,8 @@ body {
   border-radius: 5px;
   background-color: #48AEAE;
 }
+/*------ End styling for Jose's custom task box ------*/
+
 
 /*styling for add task button*/
 .btn-secondary {
