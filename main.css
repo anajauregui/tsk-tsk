@@ -1,3 +1,11 @@
+/* Landing page background  */
+.landing-body {
+  background: url(assets/trianglify.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 /* custom styles for default task box */
  .task-content {
@@ -166,19 +174,6 @@
 
 .complete-box input:checked ~ .checkmark:after {
   visibility: visible;
-}
-/*-------------------------BANNER STYLING-------------------------*/
-/* Gray out the sides on the banner*/
-.side-col {
-  background-color: gray;
-  opacity: .5;
-  height: 100%;
-}
-
-/*We can change the background of our banner here to whatever we want!*/
-.banner {
-  background-image: url(https://placeimg.com/1200/300/arch);
-
 }
 
 /*Set the height of the row containing the log in form */
