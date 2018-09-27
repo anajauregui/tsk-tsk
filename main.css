@@ -71,9 +71,8 @@ body {
 }
 /*-------- End of Accordion Styling ----------*/
 
-#task-name {
+.task-name {
   /* Potential styling */
-  text-align: left;
 }
 
 .task-date {
@@ -123,23 +122,9 @@ body {
   opacity: 1;
 }
 
- /* task 2 styling */
-#inner-style{
-  background-color: rgb(111, 227, 220);
-}
-
-#days-old {
-  font-size: 75%;
-}
-
 /* -----------custom styles for default task box -------*/
 
-/* styling for level-3 task */
-.level-3 {
-  color: #581500;
-  background-color: #ffc550;
-  font-size: 2.5em;
-}
+/* styling for level-1 task */
 
 .level-1 {
   color: #3a3a3a;
@@ -158,28 +143,4 @@ body {
   padding: 10px;
   margin-left:auto;
   text-align: right;
-}
-
-/*styling for add task button*/
-.btn-secondary {
-  color: #3a3a3a;
-  background-color: #63DB63;
-  border: none;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  position: fixed;
-  right: 30px;
-  top: 100px;
-  height: 70px;
-  width: 150px;
-}
-
-.btn-secondary:hover {
-  background-color: #63DB63;
-}
-
-.btn-secondary img {
-  padding-right: 4px;
-  height: 20px;
-  width: 25px;
-  margin-bottom: 3px;
 }
