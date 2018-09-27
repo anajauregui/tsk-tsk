@@ -4,6 +4,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <button class="nav-item mx-auto mt-1 d-md-none d-lg-none d-xl-none" type="button" name="button">Add Task</button>
+    <button class="nav-item mx-auto mt-1 d-md-none d-lg-none d-xl-none" type="button" name="button" data-toggle="modal" data-target="#add-task-modal">Add Task</button>
 
 </nav>
+
+
+<!-- Add Task modal, hooked up with jquery -->
+<div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="add-task-modal-label">Task Title</h5>
+        <h6 class="modal-title modal-date">Date Added</h6>
+      </div>
+      <div class="modal-body">
+        ...Enter Task Description...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Add Task</button>
+      </div>
+    </div>
+  </div>
+</div>
