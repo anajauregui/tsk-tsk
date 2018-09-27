@@ -1,18 +1,16 @@
+
+/* custom styles for default task box */
+ .task-content {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+}
+
 /* -----------custom styles for default task box -------*/
-
-
-
-/* .row > .task-content > .row {
-  border: 1px solid black;
-  border-radius: 5px;
-} */
 
 /* styling for level-3 task */
 .level-3 {
   color: #581500;
   background-color: #ffc550;
   border-radius: 5px;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
   font-size: 2.5em;
 }
 
@@ -46,6 +44,46 @@
   margin-bottom: 3px;
 }
 
+/*-------------------------CHECKBOX STYLING-----------------------*/
+.complete-box > input {
+  opacity: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: absolute;
+  cursor: pointer;
+  height: 6vh;
+  width: 6vh;
+}
+
+.checkmark {
+  display: inline-block;
+  height: 6vh;
+  width: 6vh;
+  background-color: #b2d1d1;
+  border-radius: 5px;
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, .37);
+  box-sizing: content-box;
+  text-align: center;
+  font-weight: bold;
+}
+
+.complete-box:hover input ~ .checkmark {
+  background-color: #95afaf;
+}
+
+.complete-box input:checked ~ .checkmark {
+  background-color: white;
+}
+
+.checkmark:after {
+  content: "✓";
+  visibility: hidden;
+  color: #95afaf;
+}
+
+.complete-box input:checked ~ .checkmark:after {
+  visibility: visible;
+}
 /*styling for the date on the tasks*/
 .modal-date {
   font-size: small;
@@ -118,7 +156,6 @@
   min-height:5em;
   width: 100%;
   overflow: scroll;
-
 }
 
 .login-text {
@@ -134,7 +171,8 @@
 
 .edit-content > button {
   display: inline-block;
-  margin: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .edit-icon {
@@ -146,6 +184,50 @@
   opacity: 1;
 }
 
+/*  Level 4 Task Styling*/
+
+.level-4 {
+  background-color: #e87537;
+  color: #950000;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.level-4 > .row {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 40vh;
+}
+
+.level-4 > .row > .col-9 {
+  font-size: 250%;
+  margin-top: 0px;
+  margin-bottom: auto;
+  text-align: center;
+  line-height: 130%;
+}
+
+.level-4 > .row > .col-9 > .counter {
+  margin-bottom: 0;
+  font-size: 130%
+}
+
+.level-4 > .row > .col-9 > .task-name {
+  margin-bottom: 0;
+}
+
+.level-4 > .row > .task-date-container > .task-date > .counter {
+  font-size: 250%;
+  text-align: center;
+  line-height: 100%;
+}
+
+.level-4 > .row > .task-date-container > .task-date > .days-old {
+  font-size: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 90%;
+}
 /*-------------- body padding for nav bar --------------*/
 body{
   padding-top: 70px;
@@ -156,6 +238,7 @@ body{
   background-color: rgb(111, 227, 220);
 }
 
-#days-old {
+/* I am commenting out this code due to conflict - level 4 style overrides the font size, we can adjust
+  #days-old {
   font-size: 75%;
-}
+} */
