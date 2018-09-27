@@ -146,6 +146,10 @@
   opacity: 1;
 }
 
+/*-------------- body padding for nav bar --------------*/
+body{
+  padding-top: 70px;
+
  /* task 2 styling */
 #inner-style{
   background-color: rgb(111, 227, 220);
