@@ -1,12 +1,14 @@
-/* custom styles for default task box */
 body {
   background-color: #B2D1D1;
 }
 
 
-/*------ Styling for Jose's custom task box ------*/
+/*---------- Styling for Jose's custom task box, including checkbox and edit icon -----------*/
 #taskDescriptionRow {
   height: 150px;
+}
+.task {
+  background-color: #48AEAE;
 }
 .task-content{
   border: 1px solid;
@@ -14,10 +16,36 @@ body {
   background-color: #48AEAE;
 }
 
+/*-------------------------CHECKBOX STYLING-----------------------*/
 .task-checkbox{
-  /* Potential styling */
-  align-items:
+  /* Additional potential styling */
 }
+.complete-box > input {
+  opacity: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: absolute;
+  cursor: pointer;
+  height: 6vh;
+  width: 6vh;
+}
+
+.checkmark {
+  display: inline-block;
+  height: 6vh;
+  width: 6vh;
+  background-color: #b2d1d1;
+  border-radius: 5px;
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, .37);
+  box-sizing: content-box;
+  text-align: center;
+  font-weight: bold;
+}
+
+.complete-box:hover input ~ .checkmark {
+  background-color: #95afaf;
+}
+/*------ End of checkbox styling ------*/
 
 .task-name{
   /* Potential styling */
@@ -48,14 +76,27 @@ body {
   border-radius: 5px;
   background-color: #48AEAE;
 }
-/*------ End styling for Jose's custom task box ------*/
+/*----------- End styling for Jose's custom task box -----------*/
 
 
 /*styling for add task button*/
 .btn-secondary {
- background-color: rgb(94, 105, 247);
- position: absolute;
- right: 20px;
+  color: #3a3a3a;
+  background-color: #fff;
+  border: none;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+  position: fixed;
+  right: 30px;
+  top: 100px;
+  height: 70px;
+  width: 150px;
+}
+
+.btn-secondary img {
+  padding-right: 4px;
+  height: 20px;
+  width: 25px;
+  margin-bottom: 3px;
 }
 
 /*styling for the date on the tasks*/
@@ -71,9 +112,6 @@ body {
   flex-direction: row;
 }
 
-.task {
-  background-color: #48AEAE;
-}
 /*-------------------------BANNER STYLING-------------------------*/
 /* Gray out the sides on the banner*/
 .side-col {
@@ -117,9 +155,20 @@ body {
 
 .edit-icon {
   opacity: .0;
+  width: 50px;
+  height: 50px;
 }
 
 /* makes icon visible on hover of task*/
 .edit-icon:hover, .task-content:hover + .edit-icon{
   opacity: 1;
+}
+
+ /* task 2 styling */
+#inner-style{
+  background-color: rgb(111, 227, 220);
+}
+
+#days-old {
+  font-size: 75%;
 }
