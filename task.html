@@ -25,10 +25,13 @@
 
 <body>
 
-  <!-- add task button -->
+  <!-- add task button properly hooked up -->
   <div class="add-task-button">
     <button type="button" class="btn btn-secondary">
       <img src="assets/add.png" alt="add symbol"/>
+    <button type="button" class="btn btn-secondary d-none d-sm-none d-md-block ">
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#add-task-modal" >
+      <img src="assets/add.png" alt="add symbol">
       Add Task
     </button>
   </div>
@@ -52,12 +55,12 @@
             </div>
           </div> -->
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-          <!-- <div class= "col-12">
+           <div class= "col-12">
             <div class = "edit-content">
               <button type="button" class="btn done-editing">Done</button>
-              <button type="button" class="btn delete-task-button">Delete</button>
+              <button type="button" class="btn delete-task-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
             </div>
-          </div> -->
+          </div>
 
         </div>
       </div>
@@ -103,7 +106,7 @@
   </div>
 
   <!-- Delete modal with "show" class added to dispay on load, remove class to hide until button press. -->
-  <div class="modal fade" tabindex="-1" role="dialog" id="delete-modal-1" aria-labelledby="delete-modal-label" aria-hidden="true">
+  <div class="modal fade" tabindex="-1" role="dialog" id="delete-task-modal" aria-labelledby="delete-modal-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -117,13 +120,13 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary">Delete. :(</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal with "show" class added to dispay on load, remove class to hide until button press. -->
+  <!-- Add Task modal, hooked up with jQuery -->
   <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -135,7 +138,7 @@
           ...Enter Task Description...
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-primary">Add Task</button>
         </div>
       </div>
