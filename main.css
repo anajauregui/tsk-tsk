@@ -61,7 +61,6 @@ body {
 /*-------- Accordion Styling ----------*/
 #taskDescriptionRow > div{
   height: 250px;
-
 }
 .accordion-content {
   padding: 0;
@@ -84,15 +83,7 @@ body {
 .task-description{
   /* Potential styling */
 }
-.level-one {
-  height: 0;
-}
 
-.test-border {
-  border: 2px solidn red;
-  border-radius: 5px;
-
-}
 .task-content-test {
   border: 2px solid green;
   border-radius: 5px;
