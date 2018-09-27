@@ -11,13 +11,12 @@
 
 <body>
 
-  <!-- This is where a task div begins. It should encompass editing a task as well as the standard information. It should not include any modals at this stage -->
-  <div class="container task-content">
-
+  <!-- Task 3 -->
+  <div class="container task">
     <div class="row">
-      <div class = "col-10 offset-1 task-content level-1">
+      <div class = "col-10 offset-1 task-content level-3">
         <div class = "row">
-          <div class="col-1 justify-content-center complete-box my-auto">
+          <div class="col-1 justify-content-center complete-box my-auto d-flex">
             <input type="checkbox">
             <span class="checkmark"></span>
           </div>
@@ -25,18 +24,18 @@
             <p class="m-0 align-self-center">Laundry</p>
           </div>
           <div class="col-2 d-flex justify-content-center">
-            <div class="align-self-center text-center">
-              <p class="m-0">Sept</p>
-              <p class="m-0">24</p>
+            <div class="align-self-center text-center days-old-count">
+              <p class="m-0">10</p>
+              <p class="m-0 days-old">Days <br/> Old</p>
             </div>
           </div>
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-          <div class= "col-12">
+          <!-- <div class= "col-12">
             <div class = "edit-content">
               <button type="button" class="btn done-editing">Done</button>
               <button type="button" class="btn delete-task-button">Delete</button>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -44,8 +43,7 @@
         <img src= "assets/edit.png">
       </div>
     </div>
-
-  </div>
+</div>
 
 <br />
 <br />
@@ -53,21 +51,27 @@
 
 
 <!---------Jose's custom task container!!!!--------->
-<div class="container task-content">
+<div class="container">
   <!--First row containing checkbox, Task Title, Date and Edit Icon-->
   <div class="row">
-    <div class="col-11 col-md-11 task-content">
+    <div class="col-10 col-md-10 task-content offset-1 level-1">
     <!-- <p>Level 1 column</p> -->
         <div class="row">
-          <div class="col-1 col-xs-1 col-md-1 complete-box  task-checkbox border-test vertical-align">
+          <div class="col-1 col-xs-1 col-md-1 complete-box  task-checkbox vertical-align">
             <input type="checkbox">
             <span class="checkmark vertical-align"></span>
           </div>
-          <div class="col-8 col-xs-8 col-md-8 vertical-align task-name border-test">
-            <h3>Task Name</h3>
+          <div class="col-8 col-xs-8 col-md-8 vertical-align">
+            <div>
+              <p id="taskName">Task Name</p>
+            </div>
           </div>
-          <div class="col-3 col-xs-3 col-md-3 task-date vertical-align border-test">
-            <p>Date</p>
+          <div class="col-3 col-xs-3 col-md-3">
+            <div class="task-date days-old">
+              <p class="m-0 days-old-count">10</p>
+              <p class="m-0">Days</p>
+              <p class="m-0">Old</p>
+            </div>
           </div>
         </div>
         <!-----End of first row!!!----->
@@ -76,10 +80,10 @@
             <div class="col-1 col-xs-1 col-md-1 task-content">
               <p>&quot;empty space&quot;</p>
             </div>
-            <div class="col-8 col-xs-8 col-md-8 vertical-align task-content task-description">
+            <div class="col-8 col-xs-8 col-md-8 vertical-align task-description">
               <p>Task Description</p>
             </div>
-            <div class="col-3 col-xs-3 col-md-3 task-content vertical-align">
+            <div class="col-3 col-xs-3 col-md-3 vertical-align">
               <div class = "edit-content">
                 <button type="button" class="btn btn-primary">Done</button>
                 <button type="button" class="btn btn-primary">Delete</button>
@@ -88,7 +92,7 @@
         </div>
       </div>
       <div class="col-1 col-xs-1 col-md-1">
-        <div class = "edit-icon border-test">
+        <div class = "edit-icon">
           <a href="#task-one-row"><img src="assets/edit.png" alt="Edit Icon"></a>
         </div>
       </div>

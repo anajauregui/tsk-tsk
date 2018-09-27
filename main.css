@@ -4,15 +4,13 @@ body {
 
 
 /*---------- Styling for Jose's custom task box, including checkbox and edit icon -----------*/
-.task {
-  background-color: #48AEAE;
-}
+
+/*----Border to help visualize task content-----*/
 .task-content{
   border: 1px solid;
   border-radius: 5px;
   background-color: #48AEAE;
 }
-
 /*-------------------------CHECKBOX STYLING-----------------------*/
 .task-checkbox{
   /* Additional potential styling */
@@ -73,8 +71,9 @@ body {
 }
 /*-------- End of Accordion Styling ----------*/
 
-.task-name{
+#task-name {
   /* Potential styling */
+  text-align: left;
 }
 
 .task-date {
@@ -89,38 +88,8 @@ body {
   border-radius: 5px;
   background-color: #B2D1D1;
 }
-.border-test {
-  border: 1px solid;
-  border-radius: 5px;
-  background-color: #48AEAE;
-}
+
 /*----------- End styling for Jose's custom task box -----------*/
-
-
-/*styling for add task button*/
-.btn-secondary {
-  color: #3a3a3a;
-  background-color: #fff;
-  border: none;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  position: fixed;
-  right: 30px;
-  top: 100px;
-  height: 70px;
-  width: 150px;
-}
-
-.btn-secondary img {
-  padding-right: 4px;
-  height: 20px;
-  width: 25px;
-  margin-bottom: 3px;
-}
-
-/*styling for the date on the tasks*/
-.modal-date {
-  font-size: small;
-}
 
 /*Vertically align content inside of rows*/
 .vertical-align {
@@ -128,34 +97,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-}
-
-/*-------------------------BANNER STYLING-------------------------*/
-/* Gray out the sides on the banner*/
-.side-col {
-  background-color: gray;
-  opacity: .5;
-  height: 100%;
-}
-
-/*We can change the background of our banner here to whatever we want!*/
-.banner {
-  background-image: url(https://placeimg.com/1200/300/arch);
-
-}
-
-/*Set the height of the row containing the log in form */
-.log-in {
-  height: 30vh;
-  min-height:5em;
-  width: 100%;
-  overflow: scroll;
-
-}
-
-.login-text {
-  color: white;
-  text-shadow: 1px 1px 10px white;
 }
 
 /* styling for edit views */
@@ -189,4 +130,56 @@ body {
 
 #days-old {
   font-size: 75%;
+}
+
+/* -----------custom styles for default task box -------*/
+
+/* styling for level-3 task */
+.level-3 {
+  color: #581500;
+  background-color: #ffc550;
+  font-size: 2.5em;
+}
+
+.level-1 {
+  color: #3a3a3a;
+  background-color: white;
+  font-size: 2.5em;
+}
+
+.days-old-count {
+  padding: 10px;
+}
+
+.days-old {
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 10px;
+  margin-left:auto;
+  text-align: right;
+}
+
+/*styling for add task button*/
+.btn-secondary {
+  color: #3a3a3a;
+  background-color: #63DB63;
+  border: none;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+  position: fixed;
+  right: 30px;
+  top: 100px;
+  height: 70px;
+  width: 150px;
+}
+
+.btn-secondary:hover {
+  background-color: #63DB63;
+}
+
+.btn-secondary img {
+  padding-right: 4px;
+  height: 20px;
+  width: 25px;
+  margin-bottom: 3px;
 }
