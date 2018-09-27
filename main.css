@@ -1,8 +1,11 @@
 
 /* custom styles for default task box */
  .task-content {
+  border-radius: 5px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+  margin: 10px auto;
 }
+
 
 /* -----------custom styles for default task box -------*/
 
@@ -10,7 +13,6 @@
 .level-3 {
   color: #581500;
   background-color: #ffc550;
-  border-radius: 5px;
   font-size: 2.5em;
 }
 
@@ -189,7 +191,6 @@
 .level-4 {
   background-color: #e87537;
   color: #950000;
-  border-radius: 5px;
   margin-top: 10px;
 }
 
@@ -229,12 +230,12 @@
   line-height: 90%;
 }
 /*-------------- body padding for nav bar --------------*/
-body{
+body {
   padding-top: 70px;
 }
 
  /* task 2 styling */
-#inner-style{
+.level-2 {
   background-color: rgb(111, 227, 220);
 }
 
