@@ -4,9 +4,6 @@ body {
 
 
 /*---------- Styling for Jose's custom task box, including checkbox and edit icon -----------*/
-#taskDescriptionRow {
-  height: 150px;
-}
 .task {
   background-color: #48AEAE;
 }
@@ -45,7 +42,37 @@ body {
 .complete-box:hover input ~ .checkmark {
   background-color: #95afaf;
 }
+
+.complete-box input:checked ~ .checkmark {
+  background-color: white;
+}
+
+.checkmark:after {
+  content: "✓";
+  visibility: hidden;
+  color: #95afaf;
+}
+
+.complete-box input:checked ~ .checkmark:after {
+  visibility: visible;
+}
 /*------ End of checkbox styling ------*/
+
+/*-------- Accordion Styling ----------*/
+#taskDescriptionRow > div{
+  height: 250px;
+
+}
+.accordion-content {
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.accordion-content:target {
+  height: auto;
+}
+/*-------- End of Accordion Styling ----------*/
 
 .task-name{
   /* Potential styling */
@@ -150,7 +177,7 @@ body {
   float: right;
   margin: 2px;
   position: relative;
-  bottom: -100px;
+  margin-top: 40%;
 }
 
 .edit-icon {

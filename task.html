@@ -67,36 +67,32 @@
     <div class="col-11 task-content level-1-column">
     <!-- <p>Level 1 column</p> -->
         <div class="row" type="button" data-toggle="hidden" data-target="#taskDescription" aria-expanded="false" aria-controls="collapseDescription">
-          <div class="col-md-1 task-checkbox border-test">
-            <p>&quot;Checkbox&quot;</p>
-
+          <div class="col-md-1 complete-box my-auto task-checkbox border-test vertical-align">
+            <input type="checkbox">
+            <span class="checkmark vertical-align"></span>
           </div>
           <div class="col-md-8 vertical-align task-name border-test">
-            <a href="#taskDescriptionRow">Task Name</a>
+            <a href="#task-one-row">Task Name</a>
           </div>
-
           <div class="col-md-3 task-date vertical-align border-test">
             <p>Date</p>
           </div>
-
         </div>
         <!-----End of first row!!!----->
         <!--Second row containing Task Description, last column is empty on purpose-->
-        <div class="row" id="taskDescriptionRow">
-          <div class="col-md-1 task-content">
-            <p>&quot;empty space&quot;</p>
-
-          </div>
-          <div class="col-xs-12 col-md-8 vertical-align task-content task-description">
-            <p>Task Description</p>
-
-          </div>
-          <div class="col-xs-12 col-md-3 task-content">
-            <div class = "edit-content">
-              <button type="button" class="btn btn-primary">Done</button>
-              <button type="button" class="btn btn-primary">Delete</button>
+        <div class="row accordion-content" id="task-one-row">
+            <div class="col-md-1 task-content">
+              <p>&quot;empty space&quot;</p>
             </div>
-          </div>
+            <div class="col-xs-12 col-md-8 vertical-align task-content task-description">
+              <p>Task Description</p>
+            </div>
+            <div class="col-xs-12 col-md-3 task-content">
+              <div class = "edit-content">
+                <button type="button" class="btn btn-primary">Done</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+              </div>
+            </div>
         </div>
       </div>
       <!-- The icon is not in a column so it can sit outside next to the task  -->
@@ -106,6 +102,96 @@
   </div>
 </div>
 <!---------End of Jose's custom task container---------->
+
+<!-- ------------------------------TESTING----------------- -->
+
+<!---------Jose's custom task container!!!!--------->
+<div class="container task-content">
+  <!--First row containing checkbox, Task Title, Date and Edit Icon-->
+  <div class="row">
+    <div class="col-11 task-content level-1-column">
+    <!-- <p>Level 1 column</p> -->
+        <div class="row" type="button" data-toggle="hidden" data-target="#taskDescription" aria-expanded="false" aria-controls="collapseDescription">
+          <div class="col-md-1 complete-box my-auto task-checkbox border-test vertical-align">
+            <input type="checkbox">
+            <span class="checkmark vertical-align"></span>
+          </div>
+          <div class="col-md-8 vertical-align task-name border-test">
+            <a href="#task-two-row">Task Name Numero dos</a>
+          </div>
+          <div class="col-md-3 task-date vertical-align border-test">
+            <p>Date</p>
+          </div>
+        </div>
+        <!-----End of first row!!!----->
+        <!--Second row containing Task Description, last column is empty on purpose-->
+        <div class="row accordion-content" id="task-two-row">
+            <div class="col-md-1 task-content">
+              <p>&quot;empty space&quot;</p>
+            </div>
+            <div class="col-xs-12 col-md-8 vertical-align task-content task-description">
+              <p>Task Description Number 2</p>
+            </div>
+            <div class="col-xs-12 col-md-3 task-content">
+              <div class = "edit-content">
+                <button type="button" class="btn btn-primary">Done</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- The icon is not in a column so it can sit outside next to the task  -->
+            <div class = "edit-icon border-test">
+              <img src="assets/edit.png" alt="Edit Icon">
+            </div>
+  </div>
+</div>
+<!---------End of Jose's custom task container---------->
+
+<!---------Jose's custom task container!!!!--------->
+<div class="container task-content">
+  <!--First row containing checkbox, Task Title, Date and Edit Icon-->
+  <div class="row">
+    <div class="col-11 task-content level-1-column">
+    <!-- <p>Level 1 column</p> -->
+        <div class="row" type="button" data-toggle="hidden" data-target="#taskDescription" aria-expanded="false" aria-controls="collapseDescription">
+          <div class="col-md-1 complete-box my-auto task-checkbox border-test vertical-align">
+            <input type="checkbox">
+            <span class="checkmark vertical-align"></span>
+          </div>
+          <div class="col-md-8 vertical-align task-name border-test">
+            <a href="#task-three-row">Task Name Numero tres</a>
+          </div>
+          <div class="col-md-3 task-date vertical-align border-test">
+            <p>Date</p>
+          </div>
+        </div>
+        <!-----End of first row!!!----->
+        <!--Second row containing Task Description, last column is empty on purpose-->
+        <div class="row accordion-content" id="task-three-row">
+            <div class="col-md-1 task-content">
+              <p>&quot;empty space&quot;</p>
+            </div>
+            <div class="col-xs-12 col-md-8 vertical-align task-content task-description">
+              <p>Task Description Number 3</p>
+            </div>
+            <div class="col-xs-12 col-md-3 task-content">
+              <div class = "edit-content">
+                <button type="button" class="btn btn-primary">Done</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- The icon is not in a column so it can sit outside next to the task  -->
+            <div class = "edit-icon border-test">
+              <img src="assets/edit.png" alt="Edit Icon">
+            </div>
+  </div>
+</div>
+<!---------End of Jose's custom task container---------->
+
+
 
 
 
