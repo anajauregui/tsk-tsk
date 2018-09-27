@@ -50,6 +50,22 @@
   margin-bottom: 3px;
 }
 
+/* edits for done and delete buttons maybe move up if there are any styling issues */
+
+.btn-secondary.done-editing ,.btn-secondary.delete-task-button  {
+  position: static;
+  right: unset;
+  top: unset;
+  height: unset;
+  width: unset;
+}
+
+.delete-task-button ,.done-editing {
+  padding: ;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+  background-color: rgb(42, 176, 44);
+}
+
 /*-------------------------CHECKBOX STYLING-----------------------*/
 .complete-box > input {
   opacity: 0;
