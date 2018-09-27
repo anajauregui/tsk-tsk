@@ -28,9 +28,22 @@
 
 /*styling for add task button*/
 .btn-secondary {
- background-color: rgb(94, 105, 247);
- position: absolute;
- right: 20px;
+  color: #3a3a3a;
+  background-color: #fff;
+  border: none;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+  position: fixed;
+  right: 30px;
+  top: 100px;
+  height: 70px;
+  width: 150px;
+}
+
+.btn-secondary img {
+  padding-right: 4px;
+  height: 20px;
+  width: 25px;
+  margin-bottom: 3px;
 }
 
 /*styling for the date on the tasks*/
