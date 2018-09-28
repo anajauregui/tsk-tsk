@@ -40,7 +40,7 @@ body {
 /*styling for add task button*/
 .add-task-button {
   color: #586060;
-  background-color: #56D06B;
+  background-color: white;
   border: none;
   border-radius: 5px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
@@ -62,7 +62,7 @@ body {
 }
 
 .add-task-button:hover {
-  background-color: #63DB63;
+  background-color: #56D06B;
   color: #ffffff
 }
 
