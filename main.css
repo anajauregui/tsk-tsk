@@ -24,8 +24,6 @@
   padding: 20px;
 }
 
-
-
 .content h1 {
   text-align: center;
   color: #0d3d3d;
@@ -64,9 +62,6 @@
   margin: 10px 0px;
 }
 
-body {
-  background-color: #b2d1d1;
-}
 /* -----------custom styles for default task box -------*/
 
 /* Style for level-1 task */
