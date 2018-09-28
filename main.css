@@ -1,11 +1,18 @@
 /* Landing page background  */
-.landing-body {
+.jumbotron {
   background: url(assets/trianglify.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  margin-top: -10px;
 }
+
+/* .container.landing-body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+} */
 
 /* custom styles for default task box */
  .task-content {
