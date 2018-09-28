@@ -13,6 +13,10 @@
   margin-top: -20px;
 }
 
+.login-text {
+  font-size: 4rem;
+  text-align: center;
+}
 
 /* Landing Page Content Styling */
 .content > .row {
