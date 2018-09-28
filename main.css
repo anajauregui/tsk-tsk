@@ -17,21 +17,123 @@
 
 /* -----------custom styles for default task box -------*/
 
+/* Style for level-1 task */
+.level-1 {
+  background-color: #fff;
+  font-size: 1.8rem;
+}
+
+/* task 2 styling */
+.level-2 {
+ background-color: rgb(111, 227, 220);
+ font-size: 2.2rem;
+}
+
 /* styling for level-3 task */
 .level-3 {
   color: #581500;
   background-color: #ffc550;
-  font-size: 2.5em;
+  font-size: 2.6rem;
 }
 
 .days-old-count {
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .days-old {
-  line-height: 1;
+  /* line-height: 1; */
   text-transform: uppercase;
-  font-size: .7em;
+  /* font-size: .7em; */
+}
+
+/*  Level 4 Task Styling*/
+
+.level-4 {
+  background-color: #e87537;
+  color: #950000;
+  /* margin-top: 10px; */
+}
+
+.level-4 > .row {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.level-4 > .row > .col-10 {
+  /* font-size: 250%; */
+  font-size: 3.6rem;
+  margin-top: 0px;
+  margin-bottom: auto;
+  text-align: center;
+  /* line-height: 130%; */
+  /* padding: 10px; */
+}
+
+.level-4 > .row > .col-10 > .counter {
+  margin-bottom: 0;
+  /* font-size: 130% */
+}
+
+.level-4 > .row > .col-10 > .task-name {
+  margin-bottom: 0;
+}
+
+.level-4 > .row > .task-date-container > .task-date > .counter {
+  /* font-size: 250%; */
+  text-align: center;
+  /* line-height: 100%; */
+}
+
+.level-4 > .row > .task-date-container > .task-date > .days-old {
+  /* font-size: 100%; */
+  text-align: center;
+  text-transform: uppercase;
+  /* line-height: 90%; */
+}
+
+/*  Level 5 Task Styling*/
+
+.level-5 {
+  background-color:  #ff5151;
+  color: #4e0909;
+  font-size: 4.6rem;
+  /* margin-top: 10px; */
+}
+
+.level-5 > .row {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.level-5 > .row > .col-10 {
+  /* font-size: 300%; */
+  margin-top: 0px;
+  margin-bottom: auto;
+  text-align: center;
+  /* line-height: 130%; */
+  /* padding: 20px */
+}
+
+.level-5 > .row > .col-10 > .counter {
+  margin-bottom: 0;
+  /* font-size: 150% */
+}
+
+.level-5 > .row > .col-10 > .task-name {
+  margin-bottom: 0;
+}
+
+.level-5 > .row > .task-date-container > .task-date > .counter {
+  /* font-size: 250%; */
+  text-align: center;
+  /* line-height: 100%; */
+}
+
+.level-5 > .row > .task-date-container > .task-date > .days-old {
+  font-size: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  /* line-height: 90%; */
 }
 
 /*styling for add task button*/
@@ -206,110 +308,20 @@
   margin-top: 10px;
 }
 
-
-
-
 /* makes icon visible on hover of task*/
 .edit-icon:hover, .task-content:hover + .edit-icon{
   opacity: 1;
 }
 
-/*  Level 4 Task Styling*/
-
-.level-4 {
-  background-color: #e87537;
-  color: #950000;
-  margin-top: 10px;
-}
-
-.level-4 > .row {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.level-4 > .row > .col-10 {
-  font-size: 250%;
-  margin-top: 0px;
-  margin-bottom: auto;
-  text-align: center;
-  line-height: 130%;
-  padding: 10px;
-}
-
-.level-4 > .row > .col-10 > .counter {
-  margin-bottom: 0;
-  font-size: 130%
-}
-
-.level-4 > .row > .col-10 > .task-name {
-  margin-bottom: 0;
-}
-
-.level-4 > .row > .task-date-container > .task-date > .counter {
-  font-size: 250%;
-  text-align: center;
-  line-height: 100%;
-}
-
-.level-4 > .row > .task-date-container > .task-date > .days-old {
-  font-size: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 90%;
-}
-
-
-/*  Level 5 Task Styling*/
-
-.level-5 {
-  background-color:  #ff5151;
-  color: #4e0909;
-  margin-top: 10px;
-}
-
-.level-5 > .row {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.level-5 > .row > .col-10 {
-  font-size: 300%;
-  margin-top: 0px;
-  margin-bottom: auto;
-  text-align: center;
-  line-height: 130%;
-  padding: 20px
-}
-
-.level-5 > .row > .col-10 > .counter {
-  margin-bottom: 0;
-  font-size: 150%
-}
-
-.level-5 > .row > .col-10 > .task-name {
-  margin-bottom: 0;
-}
-
-.level-5 > .row > .task-date-container > .task-date > .counter {
-  font-size: 250%;
-  text-align: center;
-  line-height: 100%;
-}
-
-.level-5 > .row > .task-date-container > .task-date > .days-old {
-  font-size: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 90%;
-}
 /*-------------- body padding for nav bar --------------*/
-body {
-  padding-top: 70px;
+html {
+  font-size: 62.5%;
 }
 
- /* task 2 styling */
-.level-2 {
-  background-color: rgb(111, 227, 220);
+body {
+  background-color: #b2d1d1;
+  font-size: 1.6rem;
+  padding-top: 70px;
 }
 
 /* ----------------- Modal Styling ------------------ */
@@ -339,17 +351,55 @@ body {
   height: auto;
 }
 
-/* I am commenting out this code due to conflict - level 4 style overrides the font size, we can adjust
-  #days-old {
-  font-size: 75%;
-} */
+
 
 @media (max-width: 576px) {
+
+  /* html {
+    font-size: 62.5%;
+  }
+
+  body {
+    font-size: 1.6rem;
+  } */
+
+  .level-1 {
+    font-size: 1.4rem;
+  }
+
+  .level-2 {
+    font-size: 1.8rem;
+  }
+
+  .level-3 {
+    font-size: 2.1rem;
+  }
+
+  .level-4 {
+    font-size: 3.2rem;
+  }
+
+  .level-5 {
+    font-size: 4.2rem;
+  }
 
   .add-task-button,
   .edit-icon {
     display: none;
   }
 
+  .row {
+    /* display: flex; */
+    flex-wrap: nowrap;
+  }
+
+  .task-content > .checkmark {
+    height: 35px;
+    width: 35px;
+  }
+
+  .task-content > .row > .col-1 {
+    display: inline-block;
+  }
 
 }
