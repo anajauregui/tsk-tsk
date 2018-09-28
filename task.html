@@ -13,9 +13,13 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-     $(function(){
-     $("#task-nav").load("nav-task.html");
-     });
+    $(function(){
+    $("#task-nav").load("nav-task.html");
+    });
+
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
   </script>
   <title>Tsk-Tsk To-Do App</title>
 </head>
@@ -46,6 +50,11 @@
           <div class="col-10 my-auto">
             <p class = "counter"> 24 DAYS OLD </p>
             <p class = "task-name">Laundry</p>
+            <!-- Will need to be "clickable" for mobile to togle the tip, may need to be
+            conditional so that function (the ability to click) only is enabled when mobile viewing.
+            The title attribute is where the actual text for the tip goes. the elipsis is the only thing visible with no action.-->
+            <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="top"
+              title="...Task Description...">...</button>
           </div>
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
 
@@ -77,6 +86,9 @@
           <div class="col-10 my-auto">
             <p class = "counter"> 24 DAYS OLD </p>
             <p class = "task-name">Laundry</p>
+            <!-- tooltip, more info on lvl 5 -->
+            <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="top"
+              title="...Task Description...">...</button>
           </div>
 
            <!-- <div class="col-2 d-flex justify-content-center task-date-container">
@@ -117,6 +129,9 @@
             <div class="align-self-center text-center days-old-count">
               <p class="m-0">10</p>
               <p class="m-0 days-old">Days <br/> Old</p>
+              <!-- tooltip, more info on lvl 5 -->
+              <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left"
+                title="...Task Description...">...</button>
             </div>
           </div>
           <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
@@ -153,6 +168,9 @@
               <div class="align-self-center text-center days-old-count">
                 <p class="m-0">10</p>
                 <p class="m-0 days-old">Days <br/> Old</p>
+                <!-- tooltip, more info on lvl 5 -->
+                <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left"
+                  title="...Task Description...">...</button>
               </div>
             </div>
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
