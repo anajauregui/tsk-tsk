@@ -328,9 +328,15 @@ body {
   text-transform: uppercase;
   line-height: 90%;
 }
+
+/*---------------------- Nav bar styling  -------------------- */
+.navbar{
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, .37);
+  border-radius: 0px 0px 5px 5px;
+}
 /*-------------- body padding for nav bar --------------*/
 body {
-  padding-top: 70px;
+  padding-top: 85px;
 }
 
  /* task 2 styling */
