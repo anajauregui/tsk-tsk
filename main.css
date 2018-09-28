@@ -345,9 +345,9 @@ body {
   font-size: 75%;
 } */
 
-@media (max-width: 576px) {
+@media (max-width: 840px) {
 
-  .add-task-button,
+  #add-task-button,
   .edit-icon {
     display: none;
   }
