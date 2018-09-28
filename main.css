@@ -38,7 +38,7 @@ body {
 /*********************BUTTONS*********************/
 /*styling for add task button*/
 .btn-secondary {
-  color: #3a3a3a;
+  color: #586060;
   background-color: #63DB63;
   border: none;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
@@ -50,7 +50,7 @@ body {
   z-index: 1000;
 }
 
-/* styling for nave add task button */
+/* styling for nav add task button */
 .btn-secondary.btn-nav {
   position: static;
   right: unset;
@@ -72,9 +72,13 @@ body {
 
 .edit-button {
   background-color: white;
-  color: #95afaf;
+  color: #586060;
   border: 0px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+}
+
+.edit-button:hover {
+  color: #000000;
 }
 
 /*-------------------------CHECKBOX STYLING-----------------------*/
@@ -315,6 +319,10 @@ body {
   color: #95afaf;
   border: 0px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+}
+
+.modal-dialog > .modal-content > .modal-footer > .btn-primary:hover {
+  color: #000000;
 }
 
 .modal-dialog > .modal-content > .modal-footer {
