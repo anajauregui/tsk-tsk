@@ -71,12 +71,12 @@ body {
 }
 
 .tooltip-btn{
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 0px 15px 0px 15px;
   margin: 0px;
-  box-shadow: 4px 4px 5px rgba(0,0,0,.37) inset;
-  border: none;
-  background-color: #b2d1d1;
+  box-shadow: 2px 2px 3px rgba(0,0,0,.37);
+  border: 1px solid rgba(0,0,0,.05);
+  background-color: inherit;
 }
 
 /* edits for done and delete buttons maybe move up if there are any styling issues */
