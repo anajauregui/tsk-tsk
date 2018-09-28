@@ -178,7 +178,7 @@
 
 /*Set the height of the row containing the log in form */
 .log-in {
-  height: 30vh;
+  height: 75vh;
   min-height:5em;
   width: 100%;
   overflow: scroll;
