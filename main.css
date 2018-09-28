@@ -38,6 +38,10 @@
   padding: 5vh 2vh;
 }
 
+.content img {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .37);
+}
+
 /* custom styles for default task box */
  .task-content {
   border-radius: 5px;
