@@ -60,7 +60,6 @@ body {
   border: none;
   border-radius: 5px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-
   position: static;
   right: unset;
   top: unset;
@@ -69,8 +68,7 @@ body {
 }
 
 .add-task-button:hover {
-  background-color: #56D06B;
-  color: #ffffff
+  background-color: #e9fff7;
 }
 
 .add-task-button img {
@@ -100,8 +98,8 @@ body {
 }
 
 #nav-add-task-button:hover {
-  background-color: #56D06B;
-  color: #ffffff
+  background-color: #e9fff7;
+  color: #586060;
 }
 
 /*-------------------------CHECKBOX STYLING-----------------------*/
