@@ -70,6 +70,15 @@ body {
   margin-bottom: 3px;
 }
 
+.tooltip-btn{
+  border-radius: 20px;
+  padding: 0px 15px 0px 15px;
+  margin: 0px;
+  box-shadow: 4px 4px 5px rgba(0,0,0,.37) inset;
+  border: none;
+  background-color: #b2d1d1;
+}
+
 /* edits for done and delete buttons maybe move up if there are any styling issues */
 
 .btn-secondary.done-editing ,.btn-secondary.delete-task-button  {
