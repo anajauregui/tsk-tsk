@@ -341,6 +341,10 @@ body {
   height: auto;
 }
 
+#validation-01 {
+  border-radius: 5px;
+}
+
 /* I am commenting out this code due to conflict - level 4 style overrides the font size, we can adjust
   #days-old {
   font-size: 75%;
