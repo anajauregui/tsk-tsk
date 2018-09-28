@@ -141,8 +141,14 @@
   z-index: 1000;
 }
 
-/* styling for nave add task button */
-.btn-secondary.btn-nav {
+
+/* styling for nav add task button */
+.add-task-button .btn-nav {
+  color: #586060;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
   position: static;
   right: unset;
   top: unset;
@@ -150,8 +156,9 @@
   width: unset;
 }
 
-.btn-secondary:hover {
-  background-color: #63DB63;
+
+.add-task-button:hover {
+  background-color: #e9fff7;
 }
 
 .btn-secondary img {
@@ -180,9 +187,9 @@
   width: unset;
 }
 
-.delete-task-button ,.done-editing {
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  background-color: rgb(42, 176, 44);
+#nav-add-task-button:hover {
+  background-color: #e9fff7;
+  color: #586060;
 }
 
 /*-------------------------CHECKBOX STYLING-----------------------*/
@@ -428,4 +435,3 @@ body {
     flex-wrap: nowrap;
   }
 
-}
