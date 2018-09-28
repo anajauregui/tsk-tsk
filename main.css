@@ -127,31 +127,43 @@
   margin-bottom: 0;
 }
 
+/*********************BUTTONS*********************/
 /*styling for add task button*/
-.btn-secondary {
-  color: #3a3a3a;
-  background-color: #63DB63;
-  border: none;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  position: fixed;
-  right: 30px;
-  top: 100px;
-  height: 70px;
-  width: 150px;
-  z-index: 1000;
+.add-task-button {
+  color: #586060;
+  background-color: white;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+
+   position: fixed;
+   right: 30px;
+   top: 100px;
+   height: 70px;
+   width: 150px;
+   z-index: 1000;
 }
 
-/* styling for nave add task button */
-.btn-secondary.btn-nav {
+.add-task-button:hover {
+   background-color: #e9fff7;
+}
+
+/* styling for nav add task button */
+#navAddTaskButton {
+  color: #586060;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+
   position: static;
   right: unset;
   top: unset;
   height: unset;
   width: unset;
 }
-
-.btn-secondary:hover {
-  background-color: #63DB63;
+#navAddTaskButton:hover {
+  background-color: #e9fff7;
 }
 
 .btn-secondary img {
@@ -170,19 +182,30 @@
   background-color: inherit;
 }
 
-/* edits for done and delete buttons maybe move up if there are any styling issues */
+/**Styling for edit buttons**/
 
-.btn-secondary.done-editing ,.btn-secondary.delete-task-button  {
+.edit-button {
   position: static;
   right: unset;
   top: unset;
   height: unset;
   width: unset;
 }
-
-.delete-task-button ,.done-editing {
+.edit-button {
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  background-color: rgb(42, 176, 44);
+  background-color: white;
+}
+.edit-button:hover {
+  background-color: #e9fff7;
+}
+/***Styling for modal buttons, currently the same as edit buttons, but changes these classes to edit those!****/
+.modal-buttons {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+  background-color: white;
+}
+
+.modal-buttons:hover {
+  background-color: #e9fff7;
 }
 
 /*-------------------------CHECKBOX STYLING-----------------------*/
