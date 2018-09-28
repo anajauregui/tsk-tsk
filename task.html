@@ -31,8 +31,8 @@
 <body>
 
   <!-- add task button properly hooked up -->
-  <div class="add-task-button ">
-    <button type="button" class="btn btn-secondary d-none d-sm-none d-md-block "  data-toggle="modal" data-target="#add-task-modal">
+  <div class=>
+    <button type="button" class="btn add-task-button d-none d-sm-none d-md-block "  data-toggle="modal" data-target="#add-task-modal">
       <img src="assets/add.png" alt="add symbol"/>
       Add Task
     </button>
@@ -61,8 +61,8 @@
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class= "col-12 collapse" id="edit-this-task-id-1">
               <div class = "edit-content">
-                <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-1">Done</button>
-                <button type="button" class="btn delete-task-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-1">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
           </div>
@@ -93,8 +93,8 @@
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class= "col-12 collapse" id="edit-this-task-id-5">
               <div class = "edit-content">
-                <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-5">Done</button>
-                <button type="button" class="btn delete-task-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-5">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
           </div>
@@ -123,8 +123,8 @@
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class= "col-12 collapse" id="edit-this-task-id-4">
               <div class = "edit-content">
-                <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-4">Done</button>
-                <button type="button" class="btn delete-task-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-4">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
           </div>
@@ -157,8 +157,8 @@
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class= "col-12 collapse" id="edit-this-task-id-3">
               <div class = "edit-content">
-                <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-3">Done</button>
-                <button type="button" class="btn delete-task-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-3">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
           </div>
@@ -191,8 +191,8 @@
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class= "col-12 collapse" id="edit-this-task-id-2">
               <div class = "edit-content">
-                <button type="button" class="btn done-editing" data-toggle="collapse" data-target="#edit-this-task-id-2">Done</button>
-                <button type="button" class="btn delete-task-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-2">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
           </div>
@@ -218,14 +218,14 @@
             <p>Is this important?</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">No, Delete It. </button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes, Keep It</button>
+            <button type="button" class="btn modal-buttons">No, Delete It. </button>
+            <button type="button" class="btn modal-buttons" data-dismiss="modal">Yes, Keep It</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal with "show" class added to dispay on load, remove class to hide until button press. -->
+    <!-- Add modal with "show" class added to dispay on load, remove class to hide until button press. -->
     <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -254,8 +254,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Add Task</button>
+            <button type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn modal-buttons">Add Task</button>
           </div>
         </div>
       </div>
