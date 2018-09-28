@@ -29,6 +29,10 @@
  font-size: 2.2rem;
 }
 
+.level-2 .row {
+  padding: 1% 0;
+}
+
 /* styling for level-3 task */
 .level-3 {
   color: #581500;
@@ -36,104 +40,44 @@
   font-size: 2.6rem;
 }
 
-.days-old-count {
-  /* padding: 10px; */
-}
-
 .days-old {
-  /* line-height: 1; */
   text-transform: uppercase;
-  /* font-size: .7em; */
 }
 
 /*  Level 4 Task Styling*/
-
 .level-4 {
   background-color: #e87537;
   color: #950000;
-  /* margin-top: 10px; */
-}
-
-.level-4 > .row {
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .level-4 > .row > .col-10 {
-  /* font-size: 250%; */
   font-size: 3.6rem;
-  margin-top: 0px;
-  margin-bottom: auto;
   text-align: center;
-  /* line-height: 130%; */
-  /* padding: 10px; */
+  line-height: 1.1;
+  padding: 4% 0;
 }
 
-.level-4 > .row > .col-10 > .counter {
+.level-4 > .row > .col-10 > .counter,
+ .level-4 > .row > .col-10 > .task-name {
   margin-bottom: 0;
-  /* font-size: 130% */
-}
-
-.level-4 > .row > .col-10 > .task-name {
-  margin-bottom: 0;
-}
-
-.level-4 > .row > .task-date-container > .task-date > .counter {
-  /* font-size: 250%; */
-  text-align: center;
-  /* line-height: 100%; */
-}
-
-.level-4 > .row > .task-date-container > .task-date > .days-old {
-  /* font-size: 100%; */
-  text-align: center;
-  text-transform: uppercase;
-  /* line-height: 90%; */
 }
 
 /*  Level 5 Task Styling*/
-
 .level-5 {
   background-color:  #ff5151;
   color: #4e0909;
   font-size: 4.6rem;
-  /* margin-top: 10px; */
-}
-
-.level-5 > .row {
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .level-5 > .row > .col-10 {
-  /* font-size: 300%; */
-  margin-top: 0px;
-  margin-bottom: auto;
   text-align: center;
-  /* line-height: 130%; */
-  /* padding: 20px */
+  line-height: 1.1;
+  padding: 6% 0;
 }
 
-.level-5 > .row > .col-10 > .counter {
-  margin-bottom: 0;
-  /* font-size: 150% */
-}
-
+.level-5 > .row > .col-10 > .counter,
 .level-5 > .row > .col-10 > .task-name {
   margin-bottom: 0;
-}
-
-.level-5 > .row > .task-date-container > .task-date > .counter {
-  /* font-size: 250%; */
-  text-align: center;
-  /* line-height: 100%; */
-}
-
-.level-5 > .row > .task-date-container > .task-date > .days-old {
-  font-size: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  /* line-height: 90%; */
 }
 
 /*styling for add task button*/
@@ -258,6 +202,7 @@
   box-sizing: content-box;
   text-align: center;
   font-weight: bold;
+  font-size: 30px;
 }
 
 .complete-box:hover input ~ .checkmark {
@@ -351,36 +296,51 @@ body {
   height: auto;
 }
 
-
+.days-old-count {
+  font-weight: bold;
+  line-height: 1.1;
+  padding: 10px;
+}
 
 @media (max-width: 576px) {
 
-  /* html {
-    font-size: 62.5%;
+  .level-5 > .row > .col-10 {
+    font-size: 3rem;
+    padding: 13% 0;
   }
 
-  body {
-    font-size: 1.6rem;
-  } */
+  .level-4 > .row > .col-10 {
+    font-size: 3rem;
+    padding: 7% 0;
+  }
+
+  .main-task-container {
+    width: 95%;
+    margin: auto;
+  }
+
+  .checkmark {
+    font-size: 20px;
+  }
 
   .level-1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .level-2 {
     font-size: 1.8rem;
   }
 
+  .level-2 .days-old {
+    font-size: 1.2rem;
+  }
+
   .level-3 {
-    font-size: 2.1rem;
+    font-size: 2.4rem;
   }
 
-  .level-4 {
-    font-size: 3.2rem;
-  }
-
-  .level-5 {
-    font-size: 4.2rem;
+  .level-3 .days-old {
+    font-size: 1.8rem;
   }
 
   .add-task-button,
@@ -389,17 +349,7 @@ body {
   }
 
   .row {
-    /* display: flex; */
     flex-wrap: nowrap;
-  }
-
-  .task-content > .checkmark {
-    height: 35px;
-    width: 35px;
-  }
-
-  .task-content > .row > .col-1 {
-    display: inline-block;
   }
 
 }
