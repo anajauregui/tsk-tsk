@@ -324,10 +324,26 @@ html {
   font-size: 62.5%;
 }
 
+.level-5 > .row > .task-date-container > .task-date > .days-old {
+  font-size: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 90%;
+}
+
+/*---------------------- Nav bar styling  -------------------- */
+/* #e9fff7 */
+.navbar{
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, .37);
+  border-radius: 0px 0px 5px 5px;
+  background-color: #e9fff7;
+}
+/*-------------- body padding for nav bar --------------*/
+
 body {
   background-color: #b2d1d1;
   font-size: 1.6rem;
-  padding-top: 70px;
+  padding-top: 85px;
 }
 
 /* ----------------- Modal Styling ------------------ */
