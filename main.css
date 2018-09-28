@@ -38,6 +38,7 @@ body {
 
 /*********************BUTTONS*********************/
 /*styling for add task button*/
+
 .add-task-button {
   color: #586060;
   background-color: white;
@@ -54,6 +55,12 @@ body {
 
 /* styling for nav add task button */
 .add-task-button .btn-nav {
+  color: #586060;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+
   position: static;
   right: unset;
   top: unset;
@@ -82,6 +89,19 @@ body {
 
 .edit-button:hover {
   color: #ffffff;
+}
+
+#nav-add-task-button {
+    color: #586060;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+}
+
+#nav-add-task-button:hover {
+  background-color: #56D06B;
+  color: #ffffff
 }
 
 /*-------------------------CHECKBOX STYLING-----------------------*/
@@ -347,12 +367,8 @@ body {
 } */
 
 /*******Swap out buttons experiment, need more research on media queries!*******/
-@media (max-width: 768px) {
-  #main-add-task-button, .edit-icon {
-    display: none;
-  }
-/*@media (max-width: 600px) {
-    #nav-add-task-button {
-      display:inline-block;
-    } */
+@media (max-width: 576px) {
+  #main-add-task-button,
+  .edit-icon {
+  display: none;
 }
