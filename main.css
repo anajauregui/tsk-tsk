@@ -1,4 +1,7 @@
-/* Landing page background  */
+body {
+  background-color: #b2d1d1;
+}
+
 .landing-body {
   background: url(assets/trianglify.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -14,9 +17,6 @@
   margin: 10px 0px;
 }
 
-body {
-  background-color: #b2d1d1;
-}
 /* -----------custom styles for default task box -------*/
 
 /* styling for level-3 task */
@@ -35,6 +35,7 @@ body {
   text-transform: uppercase;
   font-size: .7em;
 }
+
 /*********************BUTTONS*********************/
 /*styling for add task button*/
 .add-task-button {
@@ -52,7 +53,7 @@ body {
 }
 
 /* styling for nav add task button */
-.add-task-button.btn-nav {
+.add-task-button .btn-nav {
   position: static;
   right: unset;
   top: unset;
@@ -345,12 +346,13 @@ body {
   font-size: 75%;
 } */
 
-@media (max-width: 840px) {
-
-  #add-task-button,
-  .edit-icon {
+/*******Swap out buttons experiment, need more research on media queries!*******/
+@media (max-width: 768px) {
+  #main-add-task-button, .edit-icon {
     display: none;
   }
-
-
+/*@media (max-width: 600px) {
+    #nav-add-task-button {
+      display:inline-block;
+    } */
 }
