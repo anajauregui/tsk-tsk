@@ -10,9 +10,24 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  margin-top: -10px;
+  margin-top: -20px;
 }
 
+/* Landing Page Login Stuff */
+
+.log-in {
+  height: 75vh;
+  min-height:5em;
+  width: 100%;
+  overflow: scroll;
+}
+
+.login-text {
+  color: white;
+  text-shadow: 1px 1px 10px white;
+  font-size: 5rem;
+  text-align: center;
+}
 
 /* Landing Page Content Styling */
 .content > .row {
@@ -279,19 +294,6 @@
   visibility: visible;
 }
 
-/*Set the height of the row containing the log in form */
-.log-in {
-  height: 75vh;
-  min-height:5em;
-  width: 100%;
-  overflow: scroll;
-}
-
-.login-text {
-  color: white;
-  text-shadow: 1px 1px 10px white;
-}
-
 /* styling for edit views */
 .edit-content {
   float: right;
@@ -315,7 +317,7 @@
 }
 
 /*-------------- body padding for nav bar --------------*/
-html {
+#html {
   font-size: 62.5%;
 }
 
