@@ -1,3 +1,8 @@
+
+body {
+  background-color: #b2d1d1;
+}
+
 .nav-logo {
   width: 75px;
   height: 50px;
@@ -23,8 +28,6 @@
   margin-bottom: 15px;
   padding: 20px;
 }
-
-
 
 .content h1 {
   text-align: center;
@@ -64,9 +67,6 @@
   margin: 10px 0px;
 }
 
-body {
-  background-color: #b2d1d1;
-}
 /* -----------custom styles for default task box -------*/
 
 /* styling for level-3 task */
@@ -86,11 +86,14 @@ body {
   font-size: .7em;
 }
 
+/*********************BUTTONS*********************/
 /*styling for add task button*/
-.btn-secondary {
-  color: #3a3a3a;
-  background-color: #63DB63;
+
+.add-task-button {
+  color: #586060;
+  background-color: white;
   border: none;
+  border-radius: 5px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
   position: fixed;
   right: 30px;
@@ -100,8 +103,14 @@ body {
   z-index: 1000;
 }
 
-/* styling for nave add task button */
-.btn-secondary.btn-nav {
+/* styling for nav add task button */
+.add-task-button .btn-nav {
+  color: #586060;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+
   position: static;
   right: unset;
   top: unset;
@@ -109,16 +118,24 @@ body {
   width: unset;
 }
 
-.btn-secondary:hover {
-  background-color: #63DB63;
+.add-task-button:hover {
+  background-color: #56D06B;
+  color: #ffffff
 }
 
-.btn-secondary img {
+.add-task-button img {
   padding-right: 4px;
   height: 20px;
   width: 25px;
   margin-bottom: 3px;
 }
+
+
+.edit-button {
+  background-color: #56D06B;
+  color: #586060;
+  border: 0px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
 
 .tooltip-btn{
   border-radius: 5px;
@@ -131,17 +148,22 @@ body {
 
 /* edits for done and delete buttons maybe move up if there are any styling issues */
 
-.btn-secondary.done-editing ,.btn-secondary.delete-task-button  {
-  position: static;
-  right: unset;
-  top: unset;
-  height: unset;
-  width: unset;
+
+.edit-button:hover {
+  color: #ffffff;
 }
 
-.delete-task-button ,.done-editing {
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  background-color: rgb(42, 176, 44);
+#nav-add-task-button {
+    color: #586060;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+}
+
+#nav-add-task-button:hover {
+  background-color: #56D06B;
+  color: #ffffff
 }
 
 /*-------------------------CHECKBOX STYLING-----------------------*/
@@ -183,10 +205,6 @@ body {
 
 .complete-box input:checked ~ .checkmark:after {
   visibility: visible;
-}
-/*styling for the date on the tasks*/
-.modal-date {
-  font-size: small;
 }
 
 /*Vertically align content inside of rows*/
@@ -266,9 +284,6 @@ body {
   opacity: .0;
   margin-top: 10px;
 }
-
-
-
 
 /* makes icon visible on hover of task*/
 .edit-icon:hover, .task-content:hover + .edit-icon{
@@ -380,11 +395,19 @@ body {
   border-radius: 5px;
 }
 
+.modal-date {
+  font-size: small;
+}
+
 .modal-dialog > .modal-content > .modal-footer > .btn-primary {
   background-color: white;
   color: #95afaf;
   border: 0px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+}
+
+.modal-dialog > .modal-content > .modal-footer > .btn-primary:hover {
+  color: #000000;
 }
 
 .modal-dialog > .modal-content > .modal-footer {
@@ -409,12 +432,9 @@ body {
   font-size: 75%;
 } */
 
+/*******Swap out buttons experiment, need more research on media queries!*******/
 @media (max-width: 576px) {
-
-  .add-task-button,
+  #main-add-task-button,
   .edit-icon {
-    display: none;
-  }
-
-
+  display: none;
 }
