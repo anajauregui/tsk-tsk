@@ -35,7 +35,7 @@ body {
   text-transform: uppercase;
   font-size: .7em;
 }
-
+/*********************BUTTONS*********************/
 /*styling for add task button*/
 .btn-secondary {
   color: #3a3a3a;
@@ -70,19 +70,11 @@ body {
   margin-bottom: 3px;
 }
 
-/* edits for done and delete buttons maybe move up if there are any styling issues */
-
-.btn-secondary.done-editing ,.btn-secondary.delete-task-button  {
-  position: static;
-  right: unset;
-  top: unset;
-  height: unset;
-  width: unset;
-}
-
-.delete-task-button ,.done-editing {
+.edit-button {
+  background-color: white;
+  color: #95afaf;
+  border: 0px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  background-color: rgb(42, 176, 44);
 }
 
 /*-------------------------CHECKBOX STYLING-----------------------*/
@@ -124,10 +116,6 @@ body {
 
 .complete-box input:checked ~ .checkmark:after {
   visibility: visible;
-}
-/*styling for the date on the tasks*/
-.modal-date {
-  font-size: small;
 }
 
 /*Vertically align content inside of rows*/
@@ -207,9 +195,6 @@ body {
   opacity: .0;
   margin-top: 10px;
 }
-
-
-
 
 /* makes icon visible on hover of task*/
 .edit-icon:hover, .task-content:hover + .edit-icon{
@@ -319,6 +304,10 @@ body {
 .modal {
   background-color: rgba(0,0,0,.37);
   border-radius: 5px;
+}
+
+.modal-date {
+  font-size: small;
 }
 
 .modal-dialog > .modal-content > .modal-footer > .btn-primary {
