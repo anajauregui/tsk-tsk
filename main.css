@@ -365,9 +365,11 @@ body {
 }
 
 /*---------------------- Nav bar styling  -------------------- */
+/* #e9fff7 */
 .navbar{
   box-shadow: 0px 4px 5px rgba(0, 0, 0, .37);
   border-radius: 0px 0px 5px 5px;
+  background-color: #e9fff7;
 }
 /*-------------- body padding for nav bar --------------*/
 body {
