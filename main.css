@@ -67,13 +67,13 @@
 /* Style for level-1 task */
 .level-1 {
   background-color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 }
 
 /* task 2 styling */
 .level-2 {
  background-color: rgb(111, 227, 220);
- font-size: 2.2rem;
+ font-size: 1.375rem;
 }
 
 .level-2 .row {
@@ -84,7 +84,7 @@
 .level-3 {
   color: #581500;
   background-color: #ffc550;
-  font-size: 2.6rem;
+  font-size: 1.625rem;
 }
 
 .days-old {
@@ -98,7 +98,7 @@
 }
 
 .level-4 > .row > .col-10 {
-  font-size: 3.6rem;
+  font-size: 2.25rem;
   text-align: center;
   line-height: 1.1;
   padding: 4% 0;
@@ -113,7 +113,7 @@
 .level-5 {
   background-color:  #ff5151;
   color: #4e0909;
-  font-size: 4.6rem;
+  font-size: 2.875rem;
 }
 
 .level-5 > .row > .col-10 {
@@ -338,9 +338,9 @@
 }
 
 /*-------------- body padding for nav bar --------------*/
-html {
+/* #html {
   font-size: 62.5%;
-}
+} */
 
 .level-5 > .row > .task-date-container > .task-date > .days-old {
   font-size: 100%;
@@ -360,7 +360,7 @@ html {
 
 body {
   background-color: #b2d1d1;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
   padding-top: 85px;
 }
 
@@ -404,12 +404,12 @@ body {
 @media (max-width: 576px) {
 
   .level-5 > .row > .col-10 {
-    font-size: 3rem;
+    font-size: 1.875rem;
     padding: 13% 0;
   }
 
   .level-4 > .row > .col-10 {
-    font-size: 3rem;
+    font-size: 1.875rem;
     padding: 7% 0;
   }
 
@@ -423,23 +423,23 @@ body {
   }
 
   .level-1 {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 
   .level-2 {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
   }
 
   .level-2 .days-old {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
   }
 
   .level-3 {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
   }
 
   .level-3 .days-old {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
   }
 
   .add-task-button,
