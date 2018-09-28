@@ -313,6 +313,33 @@ body {
   background-color: rgb(111, 227, 220);
 }
 
+/* ----------------- Modal Styling ------------------ */
+
+.modal {
+  background-color: rgba(0,0,0,.37);
+  border-radius: 5px;
+}
+
+.modal-dialog > .modal-content > .modal-footer > .btn-primary {
+  background-color: white;
+  color: #95afaf;
+  border: 0px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
+}
+
+.modal-dialog > .modal-content > .modal-footer {
+  background-color: #b2d1d1;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal-dialog > .modal-content > .modal-header {
+  background-color: #b2d1d1;
+  border: none;
+  border-radius: 5px;
+  height: auto;
+}
+
 /* I am commenting out this code due to conflict - level 4 style overrides the font size, we can adjust
   #days-old {
   font-size: 75%;
