@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html id="html" lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $("#task-nav").load("nav-task.html");
+    });
+
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $(document).ready(function() {
+      $("#tutorial-1").modal('show');
+    });
+  </script>
+
+  <title>Tsk-Tsk To-Do App</title>
+</head>
+
+<div id="task-nav">
+  <!--do not code nav here, pull it in as a  reference from nav.html  -->
+</div>
+
+<body>
+  <div class="add-task">
+    <button type="button" class="btn add-task-button d-none d-sm-none d-md-block " data-toggle="modal" data-target="#add-task-modal">
+      <img src="assets/add.png" alt="add symbol" />
+      Add Task
+    </button>
+  </div>
+  <!-- first time user modals -->
+  <!-- Welcome Modal -->
+  <div class="modal" id="tutorial-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tutorial-1-label">Welcome!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          We're so glad you decided to give tsk-tsk a try. To get started, click next!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tutorial-2" data-dismiss="modal" data-target"#tutorial-1">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="tutorial-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tutorial-2-label">Adding a Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Click here to add a task. A task will include the task itself, a description accessible through a tooltip or by clicking on the task, and the task's due date, or age if you didn't specify when it was due. As the task ages, its color and
+          prominence change, letting you know that you've procrastinated long enough.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tutorial-3" data-dismiss="modal" data-target"#tutorial-2">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="tutorial-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tutorial-2-label">Adding a Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Placeholder for future tutorial modals
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" data-target"#tutorial-2">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script </body>
