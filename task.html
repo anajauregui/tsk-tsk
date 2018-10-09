@@ -22,7 +22,13 @@
     $('[data-toggle="tooltip"]').tooltip()
     })
     // on tap event handler for mobile specific support.
-
+    $(document).ready(function(){
+      console.log("doc ready");
+      $(".task").on("click touchstart", function(){
+        console.log("click or touch registered")
+        $(this).find(".collapse").collapse("toggle");
+      });
+    });
 
 
   </script>
