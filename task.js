@@ -1,12 +1,12 @@
 function Task (name, due, desc) {
-  userID = null;
-  completed = false;
-  taskID = null;
+  this.userID = null;
+  this.completed = false;
+  this.taskID = null;
 
-  taskName = name;
-  dueDate = due || null;
-  description = desc;
-  addedDate = new Date();
+  this.taskName = name;
+  this.dueDate = due || null;
+  this.description = desc;
+  this.addedDate = new Date();
 };
 
 
