@@ -135,23 +135,24 @@
       </div>
     </div>
 
-    <div class="container task">
+    <!-- UNIQUE TASK ID -->
+    <div class="container task" id="tempTaskID">
       <div class="row">
         <div class = "col-12 col-md-10 offset-1 task-content level-3">
           <div class = "row">
             <div class="col-2 col-md-1 justify-content-center complete-box my-auto ">
-              <input type="checkbox">
+              <!-- COMPLETED TASK INPUT ID -->
+              <input type="checkbox" id="tempCompletedTask">
               <span class="checkmark"></span>
             </div>
             <div class="col-7 col-md-9 d-flex">
               <!--  TASK NAME ID  -->
-              <p class="m-0 align-self-center" id="taskName">Task Name</p>
+              <p class="m-0 align-self-center" id="tempTaskName">Task Name</p>
             </div>
             <div class="col-3 col-md-2 d-flex justify-content-center">
               <div class="align-self-center text-center days-old-count">
-                <!-- DAYS OLD ID -->
-                <p class="m-0" id="daysOld">10</p>
-                <p class="m-0 days-old">Days Old</p>
+                <!-- DUE DATE ID -->
+                <p class="m-0 days-old" id="tempDueDate">10 <br/> Days Old</p>
                 <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left"
                   title="...Task Description...">...</button>
               </div>
@@ -268,7 +269,7 @@
     <!-- Not in our wireframe, for future reference  -->
   </footer>
 
-
+<script src="task.js"></script>
 </body>
 
 </html>

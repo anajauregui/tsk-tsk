@@ -13,3 +13,6 @@ function task (name, due, desc) {
 
 // TESTING GROUND //
 var taskNumber1 = new task("Task 1", "Tomorrow", "This is task number 1") ;
+
+var customName = $("#tempTaskName");
+customName.text("My Custom Task Name");
