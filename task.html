@@ -41,7 +41,7 @@
 
   <!-- add task button properly hooked up -->
   <div class=>
-    <button type="button" class="btn add-task-button d-none d-sm-none d-md-block " data-toggle="modal" data-target="#add-task-modal">
+    <button type="button" class="btn add-task-button" data-toggle="modal" data-target="#add-task-modal">
       <img src="assets/add.png" alt="add symbol" />
       Add Task
     </button>
@@ -236,22 +236,20 @@
   <!-- Add modal with "show" class added to dispay on load, remove class to hide until button press. -->
   <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <form>
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="add-task-modal-label">
-            <form>
               <div class="form-row">
                 <div class="col-md-4">
                   <input type="text" id="validation-01" placeholder="...Task Name..." required>
                 </div>
               </div>
-            </form>
           </h5>
           <h6 class="modal-title modal-date">Date Added</h6>
         </div>
         <div class="modal-body">
           <!--- Task discription field------------------------------------>
-          <form>
             <div class="form-group">
               <label for="form-group-input-1">Task Description</label>
               <input type="text" class="form-control" id="form-group-input-1" placeholder="...Input Task Description...">
@@ -260,13 +258,13 @@
               <label for="form-group-input-2">Additional Notes</label>
               <input type="text" class="form-control" id="form-group-input-2" placeholder="...Additional Notes...">
             </div>
-          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn modal-buttons">Add Task</button>
+          <button type="submit" class="btn modal-buttons">Add Task</button>
         </div>
       </div>
+    </form>
     </div>
   </div>
 

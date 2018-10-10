@@ -25,6 +25,11 @@ Tasklist.prototype.addTask = function (task) {
 
 
 
+
+
+// Make sure task title field is not empty
+
+
 document.addEventListener("DOMContentLoaded", function(e){
   window.masterTasklist = new Tasklist();
 });
