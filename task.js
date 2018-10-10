@@ -10,6 +10,15 @@ function Task (name, due, desc) {
 };
 
 
+
+//edit tasks
+// fourth parameter is ID
+Task.prototype.editTask = function(){
+  
+};
+
+// example obj: var taskNumber1 = new Task("Task 1", "october", "This is task number 1" , 1) ;
+
 // TESTING GROUND - Using task 3 as example //
 // var taskNumber1 = new Task("Task 1", "Tomorrow", "This is task number 1") ;
 //

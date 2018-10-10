@@ -7,7 +7,7 @@ function Tasklist(){
 //delete tasks
 
 //edit tasks
-
+// edit tasks will be a Task prototype, see task.js for fx.
 
 
 
