@@ -20,7 +20,7 @@ Tasklist.prototype.deleteTask = function(task){
   var id = task.taskID;
   for(var index=0; index<this.list.length; index++) {
     if(this.list[index].taskID === id){
-      this.list.splice(index);
+      this.list[index].splice(index);
       console.log("Task removed");
       return true;
     }
