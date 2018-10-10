@@ -37,6 +37,7 @@ Tasklist.prototype.getStorage = function(){
   for (var i = 0; i < jsonObj.length; i++) {
     taskObjs.push(new Task(
       jsonObj[i].taskName,
+      //feeding null values as an empty string bypasses a local stroage js error which stops the loop because the item is undefined. we should resolve this more elegantly when start using a database
       jsonObj[i].dueDate || "",
       jsonObj[i].description,
       jsonObj[i].taskID));
