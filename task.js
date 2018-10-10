@@ -13,7 +13,9 @@ function Task (name, due, desc) {
 
 //edit tasks
 // fourth parameter is ID
-Task.prototype.editTask = function(){
+Task.prototype.editTask = function(obj){
+  var tList = Tasklist.list;
+
   
 };
 
