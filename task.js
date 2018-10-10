@@ -12,6 +12,42 @@ function Task(taskName, dueDate, description, taskID) {
 };
 
 
+
+//edit tasks
+// fourth parameter is ID
+// will not have fx to edit id.
+Task.prototype.editTask = function(obj){
+  // var tList = masterTasklist.list;
+
+  // find index helper fx
+  function findID(e){
+    return e.taskID === obj.taskID;
+  }
+  //stores task index after finding it by id
+  var tTaskIDindex = masterTasklist.list.findIndex(findID);
+  console.log("task index: "+ tTaskIDindex);
+  //set edit object values to the targeted tasks
+  if (tTaskIDindex === -1) {
+    return console.log("invalid ID");
+  }
+  // .replace with regexp to remove all whitespace in boolean check, does not work for &#8239; (thin space) or &nbsp; (non-breaking space), hopefully we wont run into this stuff.
+  if (obj.taskName.replace(/\s+/g,"")) {
+    masterTasklist.list[tTaskIDindex].taskName = obj.taskName;
+  }
+  // may need to be null at times.
+  if (obj.dueDate) {
+    masterTasklist.list[tTaskIDindex].dueDate = new Date(obj.dueDate.toString()) || null;
+  }
+  if (obj.description) {
+    masterTasklist.list[tTaskIDindex].description = obj.description;
+  }
+  console.log('"' + masterTasklist.list[tTaskIDindex].taskName + '"' + " has been edited.");
+  return masterTasklist.list;
+};
+
+// example obj: var taskNumber1 = new Task("Task 1", "october", "This is task number 1" , 1)
+//exp. cmd: masterTasklist.list[0].editTask({taskName: "edited task 1", description: "edited desc 1", taskID: 1}
+
 // TESTING GROUND - Using task 3 as example //
 var taskNumber1 = new Task("Task 1", "october 10 2017", "This is task number 1" , 1) ;
 var taskNumber2 = new Task("Name", "feb 17 2018", "This is task number 2" , 2) ;

@@ -21,7 +21,7 @@ Tasklist.prototype.addTask = function (task) {
 //delete tasks
 
 //edit tasks
-
+// edit tasks will be a Task prototype, see task.js for fx.
 
 //local storage
 Tasklist.prototype.createStorage = function(){
