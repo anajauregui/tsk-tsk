@@ -405,7 +405,7 @@ body {
   border-radius: 5px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .task-content .row {
     justify-content: space-around;
   }
@@ -449,9 +449,15 @@ body {
     font-size: 1.125rem;
   }
 
-  .add-task-button,
-  .edit-icon {
-    display: none;
-  }
-
+}
+/* MEDIA QUERIES TO SWAP ADD TASK BUTTON ON SCREEN SIZE CHANGE */
+@media (max-width: 915px) {
+    .add-task-button {
+      display: none;
+    }
+}
+@media (min-width: 916px) {
+    #navAddTaskButton {
+      display: none;
+    }
 }
