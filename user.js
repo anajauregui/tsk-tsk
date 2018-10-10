@@ -11,5 +11,5 @@ function User(userID, userName, email, password) {
 
 //testable users
 var user1 = new User(1, 'oona' , 'fake@email.com' , 'lololuwish');
-var user1 = new User(1, 'oona' , 'fake@email.com' , 'lololuwish');
-var user1 = new User(1, 'oona' , 'fake@email.com' , 'lololuwish');
+var user2 = new User(1, 'ana' , 'fakea@email.com' , 'hahatryagain');
+var user3 = new User(1, 'cody' , 'fakec@email.com' , 'backoffyall');
