@@ -1,8 +1,9 @@
-function Task (name, due, desc) {
+function Task (name, due, desc, taskID) {
   this.userID = null;
   this.completed = false;
-  this.taskID = null;
 
+  //be sure to switch the taskID designations when we hook up a real database
+  this.taskID = taskID;
   this.taskName = name;
   this.dueDate = due || null;
   this.description = desc;
@@ -11,7 +12,7 @@ function Task (name, due, desc) {
 
 
 // TESTING GROUND - Using task 3 as example //
-// var taskNumber1 = new Task("Task 1", "Tomorrow", "This is task number 1") ;
+var taskNumber1 = new Task("Task 1", "Tomorrow", "This is task number 1" , 1) ;
 //
 // var customName = $("#tempTaskName");
 // customName.text("My Custom Task Title");
