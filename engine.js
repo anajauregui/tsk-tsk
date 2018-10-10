@@ -4,9 +4,9 @@ function Tasklist(){
 
 //add tasks
 Tasklist.prototype.addTask = function (task) {
-  id = task.taskID;
-  for (var i = 0; i<this.list.length; i++) {
-    if (id === this.list[i].taskID){
+  var id = task.taskID;
+  for (var i = 0; i < this.list.length; i++) {
+    if (id == this.list[i].taskID){
       alert("Duplicate Task");
       return false;
     }
