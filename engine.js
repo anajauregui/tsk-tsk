@@ -1,3 +1,5 @@
+
+
 function Tasklist(){
   this.list = [];
 };
@@ -45,6 +47,11 @@ Tasklist.prototype.getStorage = function(){
   //returns taskified array (this is what gets defined as the list when the page loads)
   return taskObjs;
 };
+
+
+
+
+// Make sure task title field is not empty
 
 
 document.addEventListener("DOMContentLoaded", function(e){
