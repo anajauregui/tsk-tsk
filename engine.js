@@ -40,7 +40,7 @@ Tasklist.prototype.showTask = function(task) {
   }
 
   $('.main-task-container').append(`
-    <div class="container task">
+    <div id="${task.taskID}" class="container task">
       <div class="row">
         <div class="col-12 col-md-10 offset-1 task-content level-1">
           <div class="row">
