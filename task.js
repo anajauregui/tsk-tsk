@@ -17,27 +17,34 @@ function Task(taskName, dueDate, description, taskID) {
 // fourth parameter is ID
 // will not have fx to edit id.
 Task.prototype.editTask = function(obj){
-  var tList = Tasklist.list;
+  // var tList = masterTasklist.list;
 
   // find index helper fx
   function findID(e){
-    return e === obj.taskID;
+    return e.taskID === obj.taskID;
   }
   //stores task index after finding it by id
-  var tTaskIDindex = Tasklist.list.findIndex(findID);
+  var tTaskIDindex = masterTasklist.list.findIndex(findID);
+  console.log("task index: "+ tTaskIDindex);
   //set edit object values to the targeted tasks
+  if (tTaskIDindex === -1) {
+    return console.log("invalid ID");
+  }
   if (obj.taskName) {
-    Tasklist.list[tTaskIDindex].taskName = obj.taskName;
+    masterTasklist.list[tTaskIDindex].taskName = obj.taskName;
   }
   if (obj.dueDate) {
-    Tasklist.list[tTaskIDindex].dueDate = new Date(obj.dueDate.toString()) || null;
+    masterTasklist.list[tTaskIDindex].dueDate = new Date(obj.dueDate.toString()) || null;
   }
   if (obj.description) {
-    Tasklist.list[tTaskIDindex].description = obj.description;
+    masterTasklist.list[tTaskIDindex].description = obj.description;
   }
+  console.log('"' + masterTasklist.list[tTaskIDindex].taskName + '"' + " has been edited.");
+  return masterTasklist.list;
 };
 
-// example obj: var taskNumber1 = new Task("Task 1", "october", "This is task number 1" , 1) ;
+// example obj: var taskNumber1 = new Task("Task 1", "october", "This is task number 1" , 1)
+//exp. cmd: masterTasklist.list[0].editTask({taskName: "edited task 1", description: "edited desc 1", taskID: 1}
 
 // TESTING GROUND - Using task 3 as example //
 var taskNumber1 = new Task("Task 1", "october", "This is task number 1" , 1) ;
