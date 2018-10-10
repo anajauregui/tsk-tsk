@@ -37,7 +37,7 @@ Tasklist.prototype.getStorage = function(){
   for (var i = 0; i < jsonObj.length; i++) {
     taskObjs.push(new Task(
       jsonObj[i].taskName,
-      jsonObj[i].dueDate || null,
+      jsonObj[i].dueDate || "",
       jsonObj[i].description,
       jsonObj[i].taskID));
   }
