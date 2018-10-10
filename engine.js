@@ -19,6 +19,20 @@ Tasklist.prototype.addTask = function (task) {
   return true;
 };
 //delete tasks
+Tasklist.prototype.deleteTask = function(task){
+  var id = task.taskID;
+  for(var index=0; index<this.list.length; index++) {
+    if(this.list[index].taskID === id){
+      this.list.splice(index,1);
+      console.log("Task removed");
+      return true;
+    }
+
+  }
+  console.log("Task was not removed");
+  return false;
+};
+
 
 //edit tasks
 // edit tasks will be a Task prototype, see task.js for fx.
