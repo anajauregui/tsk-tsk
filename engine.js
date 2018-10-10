@@ -16,16 +16,18 @@ Tasklist.prototype.addTask = function (task) {
   return true;
 };
 //delete tasks
-Tasklist.prototype.deleteTask = function(Task){
-  var gone = [];
+Tasklist.prototype.deleteTask = function(task){
+  var id = task.taskID;
   for(var index=0; index<this.list.length; index++) {
-    console.log("task have been deleted");
-    if(this.list[index].Task === Task){
+    if(this.list[index].taskID === id){
       this.list.splice(index);
-     console.log(gone);
+      console.log("Task removed");
+      return true;
     }
-  }
 
+  }
+  console.log("Task was not removed");
+  return false;
 };
 
 
