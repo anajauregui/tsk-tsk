@@ -31,7 +31,7 @@ Task.prototype.editTask = function(obj){
     return console.log("invalid ID");
   }
   // .replace with regexp to remove all whitespace in boolean check, does not work for &#8239; (thin space) or &nbsp; (non-breaking space), hopefully we wont run into this stuff.
-  if (obj.taskName.replace(/\s+/g,"")) {
+  if (obj.taskName.trim().replace(/\s+/g,"")) {
     masterTasklist.list[tTaskIDindex].taskName = obj.taskName;
   }
   // may need to be null at times.
