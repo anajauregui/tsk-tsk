@@ -42,6 +42,7 @@ Task.prototype.editTask = function(obj){
     masterTasklist.list[tTaskIDindex].description = obj.description;
   }
   console.log('"' + masterTasklist.list[tTaskIDindex].taskName + '"' + " has been edited.");
+  masterTasklist.createStorage();
   return masterTasklist.list;
 };
 

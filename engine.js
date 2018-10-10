@@ -1,5 +1,3 @@
-
-
 function Tasklist(){
   this.list = [];
 };
@@ -18,6 +16,7 @@ Tasklist.prototype.addTask = function (task) {
   console.log("Task Added");
   return true;
 };
+
 //delete tasks
 Tasklist.prototype.deleteTask = function(task){
   var id = task.taskID;
@@ -25,6 +24,7 @@ Tasklist.prototype.deleteTask = function(task){
     if(this.list[index].taskID === id){
       this.list.splice(index,1);
       console.log("Task removed");
+      masterTasklist.createStorage();
       return true;
     }
 
