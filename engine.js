@@ -35,7 +35,7 @@ Tasklist.prototype.calcDaysOld = function (dateAdded) {
 Tasklist.prototype.showTask = function(task) {
   var daysOld = this.calcDaysOld(task.dateAdded);
 
-  if(task.dueDate === "Invalid Date") {
+  if(task.dueDate === "Invalid Date"){
     var month = daysOld.toString();
     var day = 'Days Old';
   } else {
@@ -64,21 +64,41 @@ Tasklist.prototype.showTask = function(task) {
               </div>
             </div>
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-            <div class="col-12 collapse" id="edit-this-task-id-1">
+            <div class="col-12 collapse" id="edit-this-task-id-${task.taskID}">
               <div class="edit-content">
-                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-1">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-${task.taskID}">Done</button>
                 <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
           </div>
         </div>
         <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
-          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-1">
+          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-${task.taskID}">
         </div>
       </div>
     </div>
   `)
 };
+
+// Add Task Modal Functionality
+$("#add-task-modal").on("submit", function (e){
+  var taskN = $("#newTaskName").val();
+
+  if (taskN.replace(/\s+/g,"")){
+    var newTaskN = taskN.trim();
+    var taskD = $("#newTaskDescription").val();
+    var dueD = $("#newDueDate").val();
+    var tempRandomID = Math.floor( (Math.random()*10) + 6);
+    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
+    e.preventDefault();
+    $("#add-task-modal").modal("hide");
+    e.preventDefault();
+  } else {
+    alert("Please Enter a Valid Task Name");
+    e.preventDefault();
+  }
+});
+
 
 //delete tasks
 Tasklist.prototype.deleteTask = function(task){
