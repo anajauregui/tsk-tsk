@@ -116,10 +116,14 @@ Tasklist.prototype.getStorage = function(){
   for (var i = 0; i < jsonObj.length; i++) {
     taskObjs.push(new Task(
       jsonObj[i].taskName,
-      //feeding null values as an empty string bypasses a local stroage js error which stops the loop because the item is undefined. we should resolve this more elegantly when start using a database
+      //feeding null values as an empty string bypasses a local storage js error which stops the loop because the item is undefined. we should resolve this more elegantly when we start using a database
       jsonObj[i].dueDate || "",
       jsonObj[i].description,
-      jsonObj[i].taskID));
+      jsonObj[i].taskID,
+      jsonObj[i].userID || "",
+      jsonObj[i].completed,
+      jsonObj[i].dateAdded
+    ));
   }
   //returns taskified array (this is what gets defined as the list when the page loads)
   return taskObjs;
@@ -135,7 +139,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   window.masterTasklist = new Tasklist();
   if (localStorage.length) {
     console.log("Loading Last List State.");
-    window.masterTasklist.list = masterTasklist.getStorage()}
+    window.masterTasklist.list = masterTasklist.getStorage();
+  }
     //if there is nothing in local storage, a new Library will be created, a set list of books will be loaded, and a copy will be stored in local storage
     else {
       console.log("Creating New Tasklist.");
