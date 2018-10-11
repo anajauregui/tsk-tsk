@@ -67,7 +67,10 @@
 }
 
 /* -----------custom styles for default task box -------*/
-
+/* Centering text in a column */
+.col-centered {
+    text-align: center;
+}
 /* Style for level-1 task */
 .level-1 {
   background-color: #fff;

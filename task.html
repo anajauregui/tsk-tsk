@@ -159,21 +159,27 @@
               <div class="align-self-center text-center days-old-count">
                 <!-- DUE DATE ID -->
                 <p class="m-0 days-old" id="tempDueDate">10 <br /> Days Old</p>
-                <!-- TASK DESCRIPTION ID -->
-                <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
               </div>
             </div>
-            <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-            <div class="col-12 collapse" id="edit-this-task-id-3">
+            <!-- edit buttons and description box, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
+
+
+            <div class="col-8 collapse offset-1 col-centered edit-this-task-id-3">
+            <!-- TASK DESCRIPTION ID -->
+              <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
+            </div>
+            <div class="col-3 collapse edit-this-task-id-3">
               <div class="edit-content">
                 <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-3">Done</button>
                 <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
+
+
           </div>
         </div>
         <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
-          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-3">
+          <img src="assets/edit.png" data-toggle="collapse" data-target=".edit-this-task-id-3">
         </div>
       </div>
     </div>
