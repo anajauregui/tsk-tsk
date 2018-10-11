@@ -25,6 +25,14 @@ Tasklist.prototype.addTask = function (task) {
 Tasklist.prototype.sortTask = function(task) {
   var daysOld = this.calcDaysOld(task.dateAdded);
   var daysPastDue = this.calcDaysOld(task.dueDate, Date.now());
+  console.log(daysOld);
+  console.log(new Date().getTime(), new Date(task.dueDate).getTime());
+
+  if(daysOld < 1 && new Date().getTime() > new Date(task.dueDate).getTime()) {
+    console.log('This task has a future due date');
+    var level = 1;
+    return level;
+  }
 
   if(task.dueDate === "Invalid Date" && daysOld <= 3) {
     var level = 1;
@@ -46,17 +54,21 @@ Tasklist.prototype.sortTask = function(task) {
 
   if(task.dueDate === "Invalid Date" && daysOld > 9) {
     var level = 4;
-    // task = this.makeHighLevelTask(task, level)
   } else if(task.dueDate && daysPastDue >= 3) {
     var level = 4;
-    // task = this.makeHighLevelTask(task, level)
   }
 
+  if(task.dueDate === "Invalid Date" && daysOld > 13) {
+    var level = 5;
+  } else if(task.dueDate && daysPastDue >= 4) {
+    var level = 5
+  }
   // return [task, level];
   return level
 }
 
 Tasklist.prototype.makeHighLevelTask = function(task, level) {
+  // var level = this.sortTask(task)
   var daysOld = this.calcDaysOld(task.dateAdded);
 
   if(task.dueDate === "Invalid Date") {
@@ -112,48 +124,52 @@ Tasklist.prototype.calcDaysOld = function(dateAdded, currentDate) {
 Tasklist.prototype.showTask = function(task, level) {
   var daysOld = this.calcDaysOld(task.dateAdded);
 
-  if(task.dueDate === "Invalid Date") {
-    var month = daysOld;
-    var day = 'Days Old';
+  if(level > 3) {
+    this.makeHighLevelTask(task, level);
   } else {
-    var dueDate = (task.dueDate).split(' ');
-    var month = dueDate[1];
-    var day = dueDate[2];
-  }
+    if(task.dueDate === "Invalid Date") {
+      var month = daysOld;
+      var day = 'Days Old';
+    } else {
+      var dueDate = (task.dueDate).split(' ');
+      var month = dueDate[1];
+      var day = dueDate[2];
+    }
 
-  $('.main-task-container').append(`
-    <div id="${task.taskID}" class="container task">
-      <div class="row">
-        <div class="col-12 col-md-10 offset-1 task-content level-${level}">
-          <div class="row">
-            <div class="col-2 col-md-1 justify-content-center complete-box my-auto ">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </div>
-            <div class="col-7 col-md-9 d-flex">
-              <p class="m-0 align-self-center">${task.taskName}</p>
-            </div>
-            <div class="col-3 col-md-2 d-flex justify-content-center">
-              <div class="align-self-center text-center days-old-count">
-                <p class="m-0">${month}</p>
-                <p class="m-0 days-old">${day}</p>
-                <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="${task.description}">...</button>
+    $('.main-task-container').append(`
+      <div id="${task.taskID}" class="container task">
+        <div class="row">
+          <div class="col-12 col-md-10 offset-1 task-content level-${level}">
+            <div class="row">
+              <div class="col-2 col-md-1 justify-content-center complete-box my-auto ">
+                <input type="checkbox">
+                <span class="checkmark"></span>
               </div>
-            </div>
-            <div class="col-12 collapse" id="edit-this-task-id-1">
-              <div class="edit-content">
-                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-1">Done</button>
-                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+              <div class="col-7 col-md-9 d-flex">
+                <p class="m-0 align-self-center">${task.taskName}</p>
+              </div>
+              <div class="col-3 col-md-2 d-flex justify-content-center">
+                <div class="align-self-center text-center days-old-count">
+                  <p class="m-0">${month}</p>
+                  <p class="m-0 days-old">${day}</p>
+                  <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="${task.description}">...</button>
+                </div>
+              </div>
+              <div class="col-12 collapse" id="edit-this-task-id-1">
+                <div class="edit-content">
+                  <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-1">Done</button>
+                  <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
-          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-1">
+          <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
+            <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-1">
+          </div>
         </div>
       </div>
-    </div>
-  `)
+    `)
+  }
 };
 
 
@@ -221,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     //if there is nothing in local storage, a new Library will be created, a set list of books will be loaded, and a copy will be stored in local storage
     else {
       console.log("Creating New Tasklist.");
-      masterTasklist.addTask(taskNumber1);
+      // masterTasklist.addTask(taskNumber1);
       masterTasklist.createStorage();
     }
 });
