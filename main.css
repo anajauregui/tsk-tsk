@@ -196,11 +196,14 @@
   width: unset;
 }
 .edit-button {
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  background-color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, .37);
+  background-color: inherit;
+  border: 1px solid rgba(0, 0, 0, .15);
+
 }
 .edit-button:hover {
-  background-color: #e9fff7;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
+  border: 1px solid rgba(0, 0, 0, .3);
 }
 /***Styling for modal buttons, currently the same as edit buttons, but changes these classes to edit those!****/
 .modal-buttons {
@@ -404,6 +407,12 @@ body {
 #validation-01 {
   border-radius: 5px;
 }
+
+/* everything for the edit+delete buttons to be styled */
+
+
+
+
 
 @media (max-width: 575px) {
   .task-content .row {
