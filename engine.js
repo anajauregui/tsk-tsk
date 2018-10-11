@@ -66,7 +66,7 @@ Tasklist.prototype.showTask = function(task) {
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class="col-12 collapse" id="edit-this-task-id-1">
               <div class="edit-content">
-                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-1">Done</button>
+                <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
                 <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
