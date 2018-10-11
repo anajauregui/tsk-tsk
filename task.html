@@ -28,7 +28,7 @@
     })
     // unable to listen for dynamically crated elements.
     // this bit below is supposed to update our dynamically created tasks but its not working.
-    $(".main-task-container").on('click', 'task', function(){
+    $(".main-task-container").on('click', '.task', function(){
       //event listener for edit clicks
 
       //changed done button on lvl5 to edit and changed the data target to #edit-task-modal, will need to do this to all done buttons.
@@ -76,12 +76,13 @@
           description: oDescription,
           taskID: oTaskID
         };
-        console.log(tempEditTaskIDunique);
         console.log("oTaskID: " + oTaskID);
         var tTaskindex = showIndex(taskChangesObj);
-        console.log(tTaskindex);
-        console.log("build temp task obj \n"+taskChangesObj);
+        // console.log(tTaskindex);
+        // console.log("build temp task obj \n"+taskChangesObj);
         //sube 0 for index for testing.
+
+        // re-enable once dynamic issue with tasks addressed.
         // masterTasklist.list[tTaskindex].editTask(taskChangesObj);
         return false;
       });
