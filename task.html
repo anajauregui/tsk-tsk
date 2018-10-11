@@ -26,15 +26,9 @@
     $(function() {
       $('[data-toggle="tooltip"]').tooltip()
     })
-    // on tap event handler for mobile specific support.
-    $(document).ready(function() {
-      //console.log("doc ready");
-      $(".task").on("touchstart", function() {
-        //console.log("touch registered")
-        $(this).find(".collapse").collapse("toggle");
-      });
-
-
+    // unable to listen for dynamically crated elements.
+    // this bit below is supposed to update our dynamically created tasks but its not working.
+    $(".main-task-container").on('click', 'task', function(){
       //event listener for edit clicks
 
       //changed done button on lvl5 to edit and changed the data target to #edit-task-modal, will need to do this to all done buttons.
@@ -47,6 +41,21 @@
 
         // alert(tActiveTaskID);
       });
+    });
+
+    // on tap event handler for mobile specific support.
+    $(document).ready(function() {
+      //console.log("doc ready");
+      $(".task").on("touchstart", function() {
+        //console.log("touch registered")
+        $(this).find(".collapse").collapse("toggle");
+      });
+
+
+
+
+
+
 
       //listens for submit on edit task form then calls the edittask function
       $("#edit-task-form").submit(function(){
@@ -67,9 +76,13 @@
           description: oDescription,
           taskID: oTaskID
         };
+        console.log(tempEditTaskIDunique);
+        console.log("oTaskID: " + oTaskID);
+        var tTaskindex = showIndex(taskChangesObj);
+        console.log(tTaskindex);
         console.log("build temp task obj \n"+taskChangesObj);
         //sube 0 for index for testing.
-        masterTasklist.list[oTaskID].editTask(taskChangesObj);
+        // masterTasklist.list[tTaskindex].editTask(taskChangesObj);
         return false;
       });
 
