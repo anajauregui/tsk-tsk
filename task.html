@@ -30,8 +30,13 @@
       });
     });
     // clears modal information //
-    $('body').on('hidden.bs.modal', '.modal', function() {
-      $(this).removeData('bs.modal');
+    $(document).ready(function() {
+      $("#close-button").click(function() {
+
+        $('#form-group-input-1').val('');
+        $('#form-group-input-2').val('');
+        $('#validation-01').val('');
+      });
     });
   </script>
   <title>Tsk-Tsk To-Do App</title>
@@ -268,7 +273,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
+            <button id="close-button" type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
             <button type="submit" class="btn modal-buttons">Add Task</button>
           </div>
         </div>
