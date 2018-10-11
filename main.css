@@ -189,7 +189,12 @@
   background-color: inherit;
 }
 
-/**Styling for edit buttons**/
+/**Styling for edit area**/
+
+.edit-this-task-id-3 p {
+  font-size: .6em;
+  padding-right: 1vw;
+}
 
 .edit-button {
   position: static;
