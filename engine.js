@@ -82,15 +82,21 @@ Tasklist.prototype.showTask = function(task) {
 
 // Add Task Modal Functionality
 $("#add-task-modal").on("submit", function (e){
-  // e.preventDefault()
   var taskN = $("#newTaskName").val();
-  var taskD = $("#newTaskDescription").val();
-  var dueD = $("#newDueDate").val();
-  var tempRandomID = Math.floor( (Math.random()*10) + 6);
 
-  masterTasklist.addTask(new Task(taskN, dueD, taskD, tempRandomID));
-    e.preventDefault()
+  if (taskN.replace(/\s+/g,"")){
+    var newTaskN = taskN.trim();
+    var taskD = $("#newTaskDescription").val();
+    var dueD = $("#newDueDate").val();
+    var tempRandomID = Math.floor( (Math.random()*10) + 6);
+    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
+    e.preventDefault();
     $("#add-task-modal").modal("hide");
+    e.preventDefault();
+  } else {
+    alert("Please Enter a Valid Task Name");
+    e.preventDefault();
+  }
 });
 
 
