@@ -408,12 +408,6 @@ body {
   border-radius: 5px;
 }
 
-/* everything for the edit+delete buttons to be styled */
-
-
-
-
-
 @media (max-width: 575px) {
   .task-content .row {
     justify-content: space-around;
