@@ -33,22 +33,50 @@
         //console.log("touch registered")
         $(this).find(".collapse").collapse("toggle");
       });
+
+
       //event listener for edit clicks
+
+      //changed done button on lvl5 to edit and changed the data target to #edit-task-modal, will need to do this to all done buttons.
       //listens for clicks to items with listen-for-me-edit-task class **** should be applied to all edit buttons **WITHIN** the dropdown for tasks **NOT** the pencil icon
       //need if statement to send empty string or 0 for id if no id is retrived.
       $(".listen-for-me-edit-task").click(function(event) {
         var tActiveTaskID = $(this).closest("div.task").attr("id");
-        console.log("made it this far 1 : " + tActiveTaskID);
-
+        console.log("Heard click from taskID: " + tActiveTaskID);
+        tempEditTaskIDunique = tActiveTaskID;
 
         // alert(tActiveTaskID);
+      });
+
+      //listens for submit on edit task form then calls the edittask function
+      $("#edit-task-form").submit(function(){
+        var oTaskID;
+        var oTaskName;
+        var oDueDate;
+        var oDescription;
+
+        oTaskID = tempEditTaskIDunique;
+        oTaskName = $("input[id = 'validation-edit']").val();
+        oDueDate = $("input[id = 'form-group-edit-due']").val();
+        oDescription = $("input[id = 'form-group-edit-desc']").val();
+
+        var taskChangesObj = {
+          taskName: oTaskName,
+          dueDate: oDueDate,
+          description: oDescription,
+          taskID: oTaskID
+        };
+        console.log("build temp task obj \n"+taskChangesObj);
+        //sube 0 for index for testing.
+        masterTasklist.list[oTaskID].editTask(taskChangesObj);
+        return false;
       });
 
 
       $(".listen-for-me-delete-task").click(function(event) {
         var tActiveDeleteTaskID = $(this).closest("div.task").attr("id");
         console.log("made it this far 1 : " + tActiveDeleteTaskID);
-        
+
 
         // alert(tActiveDeleteTaskID);
       });

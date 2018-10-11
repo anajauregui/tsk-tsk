@@ -133,27 +133,6 @@ Tasklist.prototype.getStorage = function(){
 
 // helper functions
 
-//edit task form object compiler
-// fx will drectely take form information, will do away with input fields soon, present only for testing.
-Tasklist.prototype.objCompiler = function(oTaskName, oDueDate, oDescription, oTaskID){
-  //pulling info from form
-  // jquery the id from the .container .task
-  // how do i associate the id with the popped up modal?
-  // need event listener to get id of task when edit is clicked and feed that somewhere...
-
-
-
-
-  // temp obj container that will be passed to edit fx
-  var taskChangesObj = {
-    taskName: oTaskName,
-    dueDate: oDueDate,
-    description: oDescription,
-    taskID: oTaskID
-  };
-  console.log(taskChangesObj);
-  //masterTasklist.createStorage();
-};
 
 
 
