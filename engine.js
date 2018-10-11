@@ -6,8 +6,6 @@ function Tasklist(){
 Tasklist.prototype.scrollWindow = function (idPOS) {
     var docHeight = $(document).height();
     var position = $("#"+idPOS).position().top;
-    console.log(position);
-    console.log(docHeight);
     window.scrollTo({
       top: position,
       behavior: "smooth"
@@ -22,6 +20,7 @@ Tasklist.prototype.addTask = function (task) {
   for (var i = 0; i < this.list.length; i++) {
     if (id == this.list[i].taskID){
       alert("Duplicate Task");
+      masterTasklist.scrollWindow(id);
       return false;
     }
   }
