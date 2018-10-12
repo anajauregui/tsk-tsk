@@ -2,6 +2,7 @@ function Tasklist(){
   this.list = [];
 };
 
+
 // Scroll window function, scrolling to follow Tasklist
 Tasklist.prototype.scrollWindow = function (idPOS) {
     var docHeight = $(document).height();
@@ -11,6 +12,66 @@ Tasklist.prototype.scrollWindow = function (idPOS) {
       behavior: "smooth"
 });
 };
+
+//listeners/handlers and some doc ready stuff.
+
+// initiate global taboos
+var tempEditTaskIDunique;
+var tempDeleteTaskIDunique;
+
+// unable to listen for dynamically crated elements.
+// this bit below is supposed to update our dynamically created tasks but its not working.
+$(".main-task-container").on('click', '.task', clickListener);
+
+function clickListener(){
+  //event listener for edit clicks
+        // console.log("anyone home?");
+        $(".listen-for-me-edit-task").on("click", function(event) {
+          tempEditTaskIDunique = $(this).closest("div.task").attr("id");
+          console.log("Heard click from taskID: " + tempEditTaskIDunique);
+          // console.log($("#"+tActiveTaskID));
+          // alert(tActiveTaskID);
+        });
+}
+
+// on tap event handler for mobile specific support.
+$(document).ready(function() {
+  //console.log("doc ready");
+  $(".task").on("touchstart", function() {
+    //console.log("touch registered")
+    $(this).find(".collapse").collapse("toggle");
+  });
+
+  //listens for submit on edit task form then calls the edittask function
+  $("#edit-task-form").on("submit", function(){
+    var oTaskID = tempEditTaskIDunique;
+    var oTaskName = $("#validation-edit").val();
+    var oDueDate = $("input[id = 'form-group-edit-due']").val();
+    var oDescription = $("input[id = 'form-group-edit-desc']").val();
+
+    var taskChangesObj = {
+      taskName: oTaskName,
+      dueDate: oDueDate,
+      description: oDescription,
+      taskID: oTaskID,
+    };
+    var tTaskindex = showIndex(taskChangesObj); // finds the index of the matching task to change.
+    // adds index key value pair to taskchangesobj
+    taskChangesObj.index = tTaskindex;
+    // console.log("oTaskID: " + oTaskID);
+    // console.log("showindex return val: "+ tTaskindex);
+    // console.log("task obj index: " + taskChangesObj.index);
+    // console.log(taskChangesObj);
+
+    // console.log(tTaskindex);
+    // console.log("build temp task obj \n"+taskChangesObj);
+    masterTasklist.list[tTaskindex].editTask(taskChangesObj);
+  });
+});
+
+
+
+
 
 //add tasks
 Tasklist.prototype.addTask = function (task) {
@@ -77,7 +138,8 @@ Tasklist.prototype.showTask = function(task) {
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class="col-12 collapse" id="edit-this-task-id-${task.taskID}">
               <div class="edit-content">
-                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-${task.taskID}">Done</button>
+                <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
+                <!--data-target="#edit-this-task-id-${task.taskID}"</button>-->
                 <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
@@ -161,12 +223,6 @@ Tasklist.prototype.getStorage = function(){
   return taskObjs;
 };
 
-
-
-
-// Make sure task title field is not empty
-
-
 document.addEventListener("DOMContentLoaded", function(e){
   window.masterTasklist = new Tasklist();
   if (localStorage.length) {
@@ -180,7 +236,3 @@ document.addEventListener("DOMContentLoaded", function(e){
       masterTasklist.createStorage();
     }
 });
-
-//dummy loader
-
-//dummy/test content
