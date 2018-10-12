@@ -257,9 +257,8 @@ $("#add-task-modal").on("submit", function (e){
     var newTaskN = taskN.trim();
     var taskD = $("#newTaskDescription").val();
     var dueD = $("#newDueDate").val();
-    var addD = $(".modal-date").html();
     var tempRandomID = Math.floor( (Math.random()*20) + 6);
-    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID, addD));
+    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
     $("#add-task-modal").modal("hide");
     e.preventDefault();
     masterTasklist.scrollWindow(tempRandomID);
@@ -273,13 +272,6 @@ $("#add-task-modal").on("submit", function (e){
 $( function() {
   $( ".newDueDate" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
 } );
-
-
-// Modal Date Added
-$(function () {
-  var modalDateAdded = $(".modal-date");
-  modalDateAdded.text(new Date().toDateString());
-});
 
 
 //delete tasks
