@@ -179,19 +179,23 @@ Tasklist.prototype.showTask = function(task, level) {
                 <div class="align-self-center text-center days-old-count">
                   <p class="m-0">${month}</p>
                   <p class="m-0 days-old">${day}</p>
-                  <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="${task.description}">...</button>
                 </div>
               </div>
-              <div class="col-12 collapse" id="edit-this-task-id-1">
-                <div class="edit-content">
-                  <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-1">Done</button>
+
+          <div class="col-10 offset-1 col-sm-7 collapse task-description edit-this-task-${task.taskID}">
+             <!-- TASK DESCRIPTION ID -->
+             <p>${task.description}</p>
+          </div>
+          <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
+            <div class="edit-content btn-group" role="group" aria-label="edit buttons">
+                  <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
                   <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
-            <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-1">
+            <img src="assets/edit.png" data-toggle="collapse" data-target=".edit-this-task-${task.taskID}">
           </div>
         </div>
       </div>
@@ -223,23 +227,25 @@ Tasklist.prototype.makeHighLevelTask = function(task, level) {
             <div class="col-10 my-auto">
               <p class="counter">${month} ${day}</p>
               <p class="task-name">${task.taskName}</p>
-              <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="top" title="${task.description}">...</button>
             </div>
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-            <div class="col-12 collapse" id="edit-this-task-id-${task.taskID}">
-              <div class="edit-content">
-                <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
-                <!--data-target="#edit-this-task-id-${task.taskID}"</button>-->
-                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+            <div class="col-10 offset-1 col-sm-7 collapse task-description edit-this-task-${task.taskID}">
+               <!-- TASK DESCRIPTION ID -->
+               <p>${task.description}</p>
+            </div>
+            <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
+              <div class="edit-content btn-group" role="group" aria-label="edit buttons">
+                    <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
+                    <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                  </div>
+                </div>
               </div>
+            </div>
+            <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
+              <img src="assets/edit.png" data-toggle="collapse" data-target=".edit-this-task-${task.taskID}">
             </div>
           </div>
         </div>
-        <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
-          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-${task.taskID}">
-        </div>
-      </div>
-    </div>
   `)
 }
 
@@ -302,7 +308,7 @@ Tasklist.prototype.getStorage = function(){
   console.log(jsonObj);
   //runs through each item in jsonObj and recreates them as a task object, then pushes re-prototyped tasks to taskObjs array
   for (var i = 0; i < jsonObj.length; i++) {
-    console.log(jsonObj[i].dueDate);
+    //console.log(jsonObj[i].dueDate);
     taskObjs.push(new Task(
       jsonObj[i].taskName,
       //feeding null values as an empty string bypasses a local storage js error which stops the loop because the item is undefined. we should resolve this more elegantly when we start using a database

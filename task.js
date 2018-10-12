@@ -15,26 +15,25 @@ function Task(taskName, dueDate, description, taskID, dateAdded) {
 //edit tasks
 // fourth parameter is ID
 // will not have fx to edit id.
-Task.prototype.editTask = function(obj){
+
   // var tList = masterTasklist.list;
 //helper //
 function showIndex(obj){
-
   // find index helper fx
-  function findID(e){
-    //should be === operator, fix when we can. using == for type conversion right now.
-    return e.taskID == obj.taskID;
-  }
+    function findID(e){
+      //should be === operator, fix when we can. using == for type conversion right now.
+      return e.taskID == obj.taskID;
+    }
   // console.log("obj.taskid: " + obj.taskID);
   //stores task index after finding it by id
-  var tTaskIDindex = masterTasklist.list.findIndex(findID);
-  // console.log("task index: "+ tTaskIDindex);
-  //set edit object values to the targeted tasks
-  if (tTaskIDindex === -1) {
-    return console.log("invalid ID");
-  }
-  return tTaskIDindex;
-}
+    var tTaskIDindex = masterTasklist.list.findIndex(findID);
+    // console.log("task index: "+ tTaskIDindex);
+    //set edit object values to the targeted tasks
+    if (tTaskIDindex === -1) {
+      return console.log("invalid ID");
+    }
+    return tTaskIDindex;
+  };
 
 
 //edit tasks
@@ -42,24 +41,8 @@ function showIndex(obj){
 // will not have fx to edit id.
 Task.prototype.editTask = function(obj){
   // var tList = masterTasklist.list;
-
-//moved to own fx: showIndex()
-  // // find index helper fx
-  // function findID(e){
-  //   return e.taskID === obj.taskID;
-  // }
-  // //stores task index after finding it by id
-  // var tTaskIDindex = masterTasklist.list.findIndex(findID);
-  // console.log("task index: "+ tTaskIDindex);
-  // //set edit object values to the targeted tasks
-  // if (tTaskIDindex === -1) {
-  //   return console.log("invalid ID");
-  // }
-
   var tTaskIDindex = obj.index;
   // console.log("showindex: "+tTaskIDindex);
-
-
   // .replace with regexp to remove all whitespace in boolean check, does not work for &#8239; (thin space) or &nbsp; (non-breaking space), hopefully we wont run into this stuff.
   if (obj.taskName.replace(/\s+/g,"")) {
     masterTasklist.list[tTaskIDindex].taskName = obj.taskName.trim();
@@ -80,14 +63,12 @@ Task.prototype.editTask = function(obj){
 //exp. cmd: masterTasklist.list[0].editTask({taskName: "edited task 1", description: "edited desc 1", taskID: 1}
 
 // TESTING GROUND - Using task 3 as example //
-
 var taskNumber1 = new Task("Task 1", "oct 30 2018", "This is task number 1" , 1, new Date().toDateString()) ;
 var taskNumber2 = new Task("Task 2", "feb 17 2018", "This is task number 2" , 2, "oct 8 2018") ;
 var taskNumber3 = new Task("Task 3", "nov 17 2018", "This is task number 3" , 3, "oct 7 2018") ;
 var taskNumber4 = new Task("Task 4", "", "This is task number 4", 4, "oct 4 2018");
 var taskNumber5 = new Task("Task 5", "oct 9 2018", "This is task number 5", 5, "oct 7 2018");
 var taskNumber6 = new Task("Task 6", "oct 7 2018", "This is task number 6", 6, "oct 10 2018");
-
 // var customName = $("#tempTaskName");
 // customName.text("My Custom Task Title");
 //

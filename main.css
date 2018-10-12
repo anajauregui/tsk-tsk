@@ -191,9 +191,10 @@
 
 /**Styling for edit area**/
 
-.edit-this-task-id-3 p {
+.task-description p {
   font-size: .6em;
   padding-right: 1vw;
+  margin: 0px;
 }
 
 .edit-button {
