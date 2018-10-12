@@ -257,8 +257,9 @@ $("#add-task-modal").on("submit", function (e){
     var newTaskN = taskN.trim();
     var taskD = $("#newTaskDescription").val();
     var dueD = $("#newDueDate").val();
+    var addD = $(".modal-date").html();
     var tempRandomID = Math.floor( (Math.random()*20) + 6);
-    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
+    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID, addD));
     $("#add-task-modal").modal("hide");
     e.preventDefault();
     masterTasklist.scrollWindow(tempRandomID);
