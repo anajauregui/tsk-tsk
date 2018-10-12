@@ -270,7 +270,7 @@ $("#add-task-modal").on("submit", function (e){
 
 // Date picker Functionality
 $( function() {
-  $( "#newDueDate" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+  $( ".newDueDate" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
 } );
 
 
