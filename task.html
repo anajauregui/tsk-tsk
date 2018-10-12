@@ -29,6 +29,15 @@
         $(this).find(".collapse").collapse("toggle");
       });
     });
+    // clears modal information //
+    $(document).ready(function() {
+      $("#close-button").click(function() {
+
+        $('#form-group-input-1').val('');
+        $('#form-group-input-2').val('');
+        $('#validation-01').val('');
+      });
+    });
   </script>
   <title>Tsk-Tsk To-Do App</title>
 </head>
@@ -163,11 +172,10 @@
                 <p class="m-0 days-old" id="tempDueDate">10 <br /> Days Old</p>
               </div>
             </div>
-            <!-- edit buttons and description box, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
 
-            <div class="col-10 offset-1 col-sm-7 collapse edit-this-task-id-3">
+            <div class="col-8 collapse offset-1 col-centered edit-this-task-id-3">
               <!-- TASK DESCRIPTION ID -->
-              <p> testing for description content and how it behaves when there's quite a lot of it</p>
+              <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
             </div>
             <div class="col-12 col-sm-4 collapse edit-this-task-id-3">
               <div class="edit-content btn-group" role="group" aria-label="edit buttons">
@@ -265,7 +273,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
+            <button id="close-button" type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
             <button type="submit" class="btn modal-buttons">Add Task</button>
           </div>
         </div>
