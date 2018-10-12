@@ -11,23 +11,55 @@ function Task(taskName, dueDate, description, taskID, dateAdded) {
   this.dateAdded = new Date(dateAdded).toDateString();//eventually this will just be new Date() with no param passed in and that will be the current date.
 };
 
+
+//edit tasks
+// fourth parameter is ID
+// will not have fx to edit id.
+Task.prototype.editTask = function(obj){
+  // var tList = masterTasklist.list;
+//helper //
+function showIndex(obj){
+
+  // find index helper fx
+  function findID(e){
+    //should be === operator, fix when we can. using == for type conversion right now.
+    return e.taskID == obj.taskID;
+  }
+  // console.log("obj.taskid: " + obj.taskID);
+  //stores task index after finding it by id
+  var tTaskIDindex = masterTasklist.list.findIndex(findID);
+  // console.log("task index: "+ tTaskIDindex);
+  //set edit object values to the targeted tasks
+  if (tTaskIDindex === -1) {
+    return console.log("invalid ID");
+  }
+  return tTaskIDindex;
+}
+
+
 //edit tasks
 // fourth parameter is ID
 // will not have fx to edit id.
 Task.prototype.editTask = function(obj){
   // var tList = masterTasklist.list;
 
-  // find index helper fx
-  function findID(e){
-    return e.taskID === obj.taskID;
-  }
-  //stores task index after finding it by id
-  var tTaskIDindex = masterTasklist.list.findIndex(findID);
-  console.log("task index: "+ tTaskIDindex);
-  //set edit object values to the targeted tasks
-  if (tTaskIDindex === -1) {
-    return console.log("invalid ID");
-  }
+//moved to own fx: showIndex()
+  // // find index helper fx
+  // function findID(e){
+  //   return e.taskID === obj.taskID;
+  // }
+  // //stores task index after finding it by id
+  // var tTaskIDindex = masterTasklist.list.findIndex(findID);
+  // console.log("task index: "+ tTaskIDindex);
+  // //set edit object values to the targeted tasks
+  // if (tTaskIDindex === -1) {
+  //   return console.log("invalid ID");
+  // }
+
+  var tTaskIDindex = obj.index;
+  // console.log("showindex: "+tTaskIDindex);
+
+
   // .replace with regexp to remove all whitespace in boolean check, does not work for &#8239; (thin space) or &nbsp; (non-breaking space), hopefully we wont run into this stuff.
   if (obj.taskName.replace(/\s+/g,"")) {
     masterTasklist.list[tTaskIDindex].taskName = obj.taskName.trim();
