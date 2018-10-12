@@ -54,7 +54,7 @@ Tasklist.prototype.showTask = function(task) {
               <span class="checkmark"></span>
             </div>
             <div class="col-7 col-md-9 d-flex">
-              <p class="m-0 align-self-center">${task.taskName}</p>
+              <p class="m-0 align-self-center" id="tempTaskName">${task.taskName}</p>
             </div>
             <div class="col-3 col-md-2 d-flex justify-content-center">
               <div class="align-self-center text-center days-old-count">
@@ -83,26 +83,32 @@ Tasklist.prototype.showTask = function(task) {
 // Edit Task Modal Functionality
   $(document).on('click', '.edit-me', function(e) {
     var that = this;
-    // var taskID = $(this).closest("div.task").attr("id");
-    // var customName = $(this).closest("p#tempTaskName").attr("id");
-    // customName.text("My Custom Task Title");
-    //
-    // for (var i=0; i < masterTasklist.list.length; i++) {
-    //   if (taskID == masterTasklist.list[i].taskID){
-    //     console.log(masterTasklist.list[i]);
-    //   var editTaskIndex = i;
-    //   }
-  });
+    console.log(this);
+    var taskID = $(this).closest("div.task").attr("id");
+    $(this).closest("#tempTaskName").html("hello");
+    // console.log(customName);
+
+    for (var i=0; i < masterTasklist.list.length; i++) {
+      if (taskID == masterTasklist.list[i].taskID){
+        console.log(masterTasklist.list[i]);
+      var editTaskIndex = i;
+      }
+    }
 
     $("#edit-task-modal").on("submit", function (e){
-
-      var customName = $(that).closest("p#tempTaskName");
+      // console.log(that);
       customName.text = $("#editTaskName").val();
+      // console.log(e.currentTarget);
+      // console.log(this);
+      // var customName = $(that).closest("p#tempTaskName");
+      // customName.text = $("#editTaskName").val();
+      //
+      // var taskN = $("#editTaskName").val();
+      // console.log(taskN);
+      // $(this).closest("p#tempTaskName") = taskN.trim();
+      // masterTasklist.list[editTaskIndex].description = $("#editTaskDescription").val();
 
-      var taskN = $("#editTaskName").val();
-      console.log(taskN);
-      $(this).closest("p#tempTaskName") = taskN.trim();
-      masterTasklist.list[editTaskIndex].description = $("#editTaskDescription").val();
+
       // if (taskN.replace(/\s+/g,"")){
       //   // masterTasklist.list[editTaskIndex].taskName = taskN.trim();
       //   // masterTasklist.list[editTaskIndex].description = $("#editTaskDescription").val();
@@ -114,10 +120,11 @@ Tasklist.prototype.showTask = function(task) {
       //   e.preventDefault();
       // } else {
       //   alert("Please Enter a Valid Task Name");
-      //   e.preventDefault();
+        e.preventDefault();
       // }
     });
 
+  });
 
 
 Tasklist.prototype.bindEvents = function () {
