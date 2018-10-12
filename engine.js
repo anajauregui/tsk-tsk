@@ -15,20 +15,28 @@ Tasklist.prototype.addTask = function (task) {
   }
   this.list.push(task);
   masterTasklist.createStorage();
-  // this.showTask(this.sortTask(task)[0], this.sortTask(task)[1]);
   this.showTask(task, this.sortTask(task))
 
   console.log("Task Added");
   return true;
 };
 
-Tasklist.prototype.sortTask = function(task) {
-  var daysOld = this.calcDaysOld(task.dateAdded);
-  var daysPastDue = this.calcDaysOld(task.dueDate, Date.now());
-  console.log(daysOld);
-  console.log(new Date().getTime(), new Date(task.dueDate).getTime());
+Tasklist.prototype.calcDaysOld = function(dateAdded, currentDate) {
+  var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+  var dateAdded = new Date(dateAdded).getTime();
+  var currentDate = new Date().getTime();
+  var daysOld = currentDate - dateAdded;
 
-  if(daysOld < 1 && new Date().getTime() > new Date(task.dueDate).getTime()) {
+  return Math.round(daysOld / oneDay);
+}
+
+Tasklist.prototype.sortTask = function(task) {
+  var daysOld = this.calcDaysOld(task.dateAdded, new Date().toDateString());
+  var daysPastDue = this.calcDaysOld(task.dueDate, new Date().toDateString());
+  var dueDate = new Date(task.dueDate);
+  var dateAdded = new Date(task.dateAdded);
+
+  if(dueDate > dateAdded && daysPastDue < 1) {
     console.log('This task has a future due date');
     var level = 1;
     return level;
@@ -63,66 +71,13 @@ Tasklist.prototype.sortTask = function(task) {
   } else if(task.dueDate && daysPastDue >= 4) {
     var level = 5
   }
-  // return [task, level];
   return level
-}
-
-Tasklist.prototype.makeHighLevelTask = function(task, level) {
-  // var level = this.sortTask(task)
-  var daysOld = this.calcDaysOld(task.dateAdded);
-
-  if(task.dueDate === "Invalid Date") {
-    var month = daysOld;
-    var day = 'Days Old';
-  } else {
-    var daysPastDue = this.calcDaysOld(task.dueDate, Date.now());
-    var month = daysPastDue;
-    var day = 'DAYS OVERDUE';
-    console.log(task);
-  }
-
-  $('.main-task-container').append(`
-    <div id="${task.taskID}" class="container task">
-      <div class="row">
-        <div class="col-12 col-md-10 offset-1 task-content level-${level}">
-          <div class="row">
-            <div class="col-1 justify-content-center complete-box my-auto">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </div>
-            <div class="col-10 my-auto">
-              <p class="counter">${month} ${day}</p>
-              <p class="task-name"><${task.taskName}/p>
-              <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="top" title="${task.description}">...</button>
-            </div>
-            <div class="col-12 collapse" id="edit-this-task-id-4">
-              <div class="edit-content">
-                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-4">Done</button>
-                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-1 edit-icon d-none d-sm-none d-md-block">
-          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-4">
-        </div>
-      </div>
-    </div>
-  `)
-}
-
-Tasklist.prototype.calcDaysOld = function(dateAdded, currentDate) {
-  var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-  var dateAdded = new Date(dateAdded).getTime();
-  var currentDate = new Date().getTime();
-  var daysOld = Math.abs(dateAdded - currentDate);
-
-  return Math.round(daysOld / oneDay);
 }
 
 //Populate task list
 Tasklist.prototype.showTask = function(task, level) {
-  var daysOld = this.calcDaysOld(task.dateAdded);
+  var currentDate = new Date().getTime();
+  var daysOld = this.calcDaysOld(task.dateAdded, currentDate);
 
   if(level > 3) {
     this.makeHighLevelTask(task, level);
@@ -137,7 +92,7 @@ Tasklist.prototype.showTask = function(task, level) {
     }
 
     $('.main-task-container').append(`
-      <div id="${task.taskID}" class="container task">
+      <div id=${task.taskID} class="container task">
         <div class="row">
           <div class="col-12 col-md-10 offset-1 task-content level-${level}">
             <div class="row">
@@ -172,7 +127,48 @@ Tasklist.prototype.showTask = function(task, level) {
   }
 };
 
+Tasklist.prototype.makeHighLevelTask = function(task, level) {
+  var daysOld = this.calcDaysOld(task.dateAdded, new Date().toDateString());
 
+  if(task.dueDate === "Invalid Date") {
+    var month = daysOld;
+    var day = 'Days Old';
+  } else {
+    var daysPastDue = this.calcDaysOld(task.dueDate, new Date().toDateString());
+    var month = daysPastDue;
+    var day = 'DAYS OVERDUE';
+    console.log(task);
+  }
+
+  $('.main-task-container').append(`
+    <div id=${task.taskID} class="container task">
+      <div class="row">
+        <div class="col-12 col-md-10 offset-1 task-content level-${level}">
+          <div class="row">
+            <div class="col-1 justify-content-center complete-box my-auto">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </div>
+            <div class="col-10 my-auto">
+              <p class="counter">${month} ${day}</p>
+              <p class="task-name">${task.taskName}</p>
+              <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="top" title="${task.description}">...</button>
+            </div>
+            <div class="col-12 collapse" id="edit-this-task-id-4">
+              <div class="edit-content">
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-4">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 edit-icon d-none d-sm-none d-md-block">
+          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-4">
+        </div>
+      </div>
+    </div>
+  `)
+}
 
 //delete tasks
 Tasklist.prototype.deleteTask = function(task){
@@ -237,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     //if there is nothing in local storage, a new Library will be created, a set list of books will be loaded, and a copy will be stored in local storage
     else {
       console.log("Creating New Tasklist.");
-      // masterTasklist.addTask(taskNumber1);
+      masterTasklist.addTask(taskNumber1);
       masterTasklist.createStorage();
     }
 });
