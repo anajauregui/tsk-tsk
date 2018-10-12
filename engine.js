@@ -229,7 +229,7 @@ $("#add-task-modal").on("submit", function (e){
   if (taskN.replace(/\s+/g,"")){
     var newTaskN = taskN.trim();
     var taskD = $("#newTaskDescription").val();
-    var dueD = $("#newDueDate").val();
+    var dueD = $(".newDueDate").val();
     var addD = $(".modal-date").html();
     var tempRandomID = Math.floor( (Math.random()*20) + 6);
     masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID, addD));
