@@ -29,6 +29,15 @@
         $(this).find(".collapse").collapse("toggle");
       });
     });
+    // clears modal information //
+    $(document).ready(function() {
+      $("#close-button").click(function() {
+
+        $('#form-group-input-1').val('');
+        $('#form-group-input-2').val('');
+        $('#validation-01').val('');
+      });
+    });
   </script>
   <title>Tsk-Tsk To-Do App</title>
 </head>
@@ -93,17 +102,17 @@
               <p class="counter"> 24 DAYS OLD </p>
               <p class="task-name">Laundry</p>
             </div>
-              <!-- edit buttons and description box, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-              <div class="col-8 collapse offset-1 col-centered edit-this-task-id-5">
+            <!-- edit buttons and description box, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
+            <div class="col-8 collapse offset-1 col-centered edit-this-task-id-5">
               <!-- TASK DESCRIPTION ID -->
-                <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
+              <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
+            </div>
+            <div class="col-3 collapse edit-this-task-id-5">
+              <div class="edit-content">
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target=".edit-this-task-id-5">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
-              <div class="col-3 collapse edit-this-task-id-5">
-                <div class="edit-content">
-                  <button type="button" class="btn edit-button" data-toggle="collapse" data-target=".edit-this-task-id-5">Done</button>
-                  <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
-                </div>
-              </div>
+            </div>
           </div>
         </div>
         <div class="col-1 edit-icon d-none d-sm-none d-md-block">
@@ -124,17 +133,17 @@
               <p class="counter"> 24 DAYS OLD </p>
               <p class="task-name">Laundry</p>
             </div>
-                <!-- edit buttons and description box, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-                <div class="col-8 collapse offset-1 col-centered edit-this-task-id-4">
-                <!-- TASK DESCRIPTION ID -->
-                  <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
-                </div>
-                <div class="col-3 collapse edit-this-task-id-4">
-                  <div class="edit-content">
-                    <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-4">Done</button>
-                    <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
-                  </div>
-                </div>
+            <!-- edit buttons and description box, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
+            <div class="col-8 collapse offset-1 col-centered edit-this-task-id-4">
+              <!-- TASK DESCRIPTION ID -->
+              <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
+            </div>
+            <div class="col-3 collapse edit-this-task-id-4">
+              <div class="edit-content">
+                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-4">Done</button>
+                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-1 edit-icon d-none d-sm-none d-md-block">
@@ -165,7 +174,7 @@
             </div>
             <!-- edit buttons and description box, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class="col-8 collapse offset-1 col-centered edit-this-task-id-3">
-            <!-- TASK DESCRIPTION ID -->
+              <!-- TASK DESCRIPTION ID -->
               <button id="tempTaskDescription" type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="tempDescription">...</button>
             </div>
             <div class="col-3 collapse edit-this-task-id-3">
@@ -241,19 +250,19 @@
   <div class="modal fade" id="add-task-modal" tabindex="-1" role="dialog" aria-labelledby="add-task-modal-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <form>
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="add-task-modal-label">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="add-task-modal-label">
               <div class="form-row">
                 <div class="col-md-4">
                   <input type="text" id="newTaskName" placeholder="...Task Name..." required>
                 </div>
               </div>
-          </h5>
-          <h6 class="modal-title modal-date">Date Added</h6>
-        </div>
-        <div class="modal-body">
-          <!--- Task discription field------------------------------------>
+            </h5>
+            <h6 class="modal-title modal-date">Date Added</h6>
+          </div>
+          <div class="modal-body">
+            <!--- Task discription field------------------------------------>
             <div class="form-group">
               <label for="form-group-input-1">Task Description</label>
               <input type="text" class="form-control" id="newTaskDescription" placeholder="...Input Task Description...">
@@ -262,13 +271,13 @@
               <label for="form-group-input-2">Due Date</label>
               <input type="text" class="form-control" id="newDueDate" placeholder="...Input Due Date...">
             </div>
+          </div>
+          <div class="modal-footer">
+            <button id="close-button" type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn modal-buttons">Add Task</button>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn modal-buttons" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn modal-buttons">Add Task</button>
-        </div>
-      </div>
-    </form>
+      </form>
     </div>
   </div>
 
