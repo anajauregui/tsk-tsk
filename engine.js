@@ -32,6 +32,24 @@ function clickListener(){
           // console.log($("#"+tActiveTaskID));
           // alert(tActiveTaskID);
         });
+
+        $(".listen-for-me-delete-task").on("click", function(event) {
+          var that = this;
+          deleteTaskID = $(this).closest("div.task").attr("id");
+
+          $("#whyNoWork").on("click", function () {
+            taskContainer= $(that).closest(".container").remove();
+            for (var i = 0; i < masterTasklist.list.length; i++) {
+              if (deleteTaskID == masterTasklist.list[i].taskID){
+                masterTasklist.list.splice(i, 1);
+                masterTasklist.createStorage();
+              }
+            }
+            $("#delete-task-modal").modal("hide");
+          });
+        });
+
+
 }
 
 // on tap event handler for mobile specific support.
@@ -189,7 +207,7 @@ Tasklist.prototype.showTask = function(task, level) {
           <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
             <div class="edit-content btn-group" role="group" aria-label="edit buttons">
                   <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
-                  <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                  <button type="button" class="btn edit-button listen-for-me-delete-task" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
                 </div>
               </div>
             </div>
@@ -236,7 +254,7 @@ Tasklist.prototype.makeHighLevelTask = function(task, level) {
             <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
               <div class="edit-content btn-group" role="group" aria-label="edit buttons">
                     <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
-                    <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                    <button type="button" class="btn edit-button listen-for-me-delete-task" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
                   </div>
                 </div>
               </div>
