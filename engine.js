@@ -94,7 +94,7 @@ Tasklist.prototype.calcDaysOld = function (dateAdded) {
 Tasklist.prototype.showTask = function(task) {
   var daysOld = this.calcDaysOld(task.dateAdded);
 
-  if(task.dueDate === "Invalid Date") {
+  if(task.dueDate === "Invalid Date"){
     var month = daysOld.toString();
     var day = 'Days Old';
   } else {
@@ -123,21 +123,42 @@ Tasklist.prototype.showTask = function(task) {
               </div>
             </div>
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-            <div class="col-12 collapse" id="edit-this-task-id-1">
+            <div class="col-12 collapse" id="edit-this-task-id-${task.taskID}">
               <div class="edit-content">
                 <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
+                <!--data-target="#edit-this-task-id-${task.taskID}"</button>-->
                 <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
           </div>
         </div>
         <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
-          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-1">
+          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-${task.taskID}">
         </div>
       </div>
     </div>
   `)
 };
+
+// Add Task Modal Functionality
+$("#add-task-modal").on("submit", function (e){
+  var taskN = $("#newTaskName").val();
+
+  if (taskN.replace(/\s+/g,"")){
+    var newTaskN = taskN.trim();
+    var taskD = $("#newTaskDescription").val();
+    var dueD = $("#newDueDate").val();
+    var tempRandomID = Math.floor( (Math.random()*10) + 6);
+    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
+    e.preventDefault();
+    $("#add-task-modal").modal("hide");
+    e.preventDefault();
+  } else {
+    alert("Please Enter a Valid Task Name");
+    e.preventDefault();
+  }
+});
+
 
 //delete tasks
 Tasklist.prototype.deleteTask = function(task){
@@ -175,34 +196,25 @@ Tasklist.prototype.getStorage = function(){
   for (var i = 0; i < jsonObj.length; i++) {
     taskObjs.push(new Task(
       jsonObj[i].taskName,
-      //feeding null values as an empty string bypasses a local stroage js error which stops the loop because the item is undefined. we should resolve this more elegantly when start using a database
+      //feeding null values as an empty string bypasses a local storage js error which stops the loop because the item is undefined. we should resolve this more elegantly when we start using a database
       jsonObj[i].dueDate || "",
       jsonObj[i].description,
-      jsonObj[i].taskID));
+      jsonObj[i].taskID,
+      jsonObj[i].userID || "",
+      jsonObj[i].completed,
+      jsonObj[i].dateAdded
+    ));
   }
   //returns taskified array (this is what gets defined as the list when the page loads)
   return taskObjs;
 };
 
-
-
-
-
-
-
-// helper functions
-
-
-
-
-// Make sure task title field is not empty
-
-
 document.addEventListener("DOMContentLoaded", function(e){
   window.masterTasklist = new Tasklist();
   if (localStorage.length) {
     console.log("Loading Last List State.");
-    window.masterTasklist.list = masterTasklist.getStorage()}
+    window.masterTasklist.list = masterTasklist.getStorage();
+  }
     //if there is nothing in local storage, a new Library will be created, a set list of books will be loaded, and a copy will be stored in local storage
     else {
       console.log("Creating New Tasklist.");
@@ -210,9 +222,3 @@ document.addEventListener("DOMContentLoaded", function(e){
       masterTasklist.createStorage();
     }
 });
-
-
-
-//dummy loader
-
-//dummy/test content

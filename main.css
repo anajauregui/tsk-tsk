@@ -67,7 +67,10 @@
 }
 
 /* -----------custom styles for default task box -------*/
-
+/* Centering text in a column */
+.col-centered {
+    text-align: center;
+}
 /* Style for level-1 task */
 .level-1 {
   background-color: #fff;
@@ -196,11 +199,14 @@
   width: unset;
 }
 .edit-button {
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, .37);
-  background-color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, .37);
+  background-color: inherit;
+  border: 1px solid rgba(0, 0, 0, .15);
+
 }
 .edit-button:hover {
-  background-color: #e9fff7;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
+  border: 1px solid rgba(0, 0, 0, .3);
 }
 /***Styling for modal buttons, currently the same as edit buttons, but changes these classes to edit those!****/
 .modal-buttons {
