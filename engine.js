@@ -274,6 +274,13 @@ $( function() {
 } );
 
 
+// Modal Date Added
+$(function () {
+  var modalDateAdded = $(".modal-date");
+  modalDateAdded.text(new Date().toDateString());
+});
+
+
 //delete tasks
 Tasklist.prototype.deleteTask = function(task){
   var id = task.taskID;
