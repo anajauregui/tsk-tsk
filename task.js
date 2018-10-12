@@ -15,11 +15,13 @@ function Task(taskName, dueDate, description, taskID, dateAdded) {
 function showIndex(obj){
   // find index helper fx
   function findID(e){
-    return e.taskID === obj.taskID;
+    //should be === operator, fix when we can. using == for type conversion right now.
+    return e.taskID == obj.taskID;
   }
+  // console.log("obj.taskid: " + obj.taskID);
   //stores task index after finding it by id
   var tTaskIDindex = masterTasklist.list.findIndex(findID);
-  console.log("task index: "+ tTaskIDindex);
+  // console.log("task index: "+ tTaskIDindex);
   //set edit object values to the targeted tasks
   if (tTaskIDindex === -1) {
     return console.log("invalid ID");
@@ -46,8 +48,8 @@ Task.prototype.editTask = function(obj){
   // if (tTaskIDindex === -1) {
   //   return console.log("invalid ID");
   // }
-  var tobj = obj;
-  var tTaskIDindex = showIndex(tobj);
+
+  var tTaskIDindex = obj.index;
   // console.log("showindex: "+tTaskIDindex);
 
 

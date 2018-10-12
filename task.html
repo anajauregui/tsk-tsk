@@ -13,93 +13,16 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-    // initiate global taboos
-    var tempEditTaskIDunique;
-    var tempDeleteTaskIDunique;
-
-
-    // loads nav bar onto page.
-    $(function() {
-      $("#task-nav").load("nav-task.html");
-    });
-    // toggles tool tip that displays description for tasks.
-    $(function() {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-    // unable to listen for dynamically crated elements.
-    // this bit below is supposed to update our dynamically created tasks but its not working.
-    $(".main-task-container").on('click', '.task', function(){
-      //event listener for edit clicks
-
-      //changed done button on lvl5 to edit and changed the data target to #edit-task-modal, will need to do this to all done buttons.
-      //listens for clicks to items with listen-for-me-edit-task class **** should be applied to all edit buttons **WITHIN** the dropdown for tasks **NOT** the pencil icon
-      //need if statement to send empty string or 0 for id if no id is retrived.
-      $(".listen-for-me-edit-task").click(function(event) {
-        var tActiveTaskID = $(this).closest("div.task").attr("id");
-        console.log("Heard click from taskID: " + tActiveTaskID);
-        tempEditTaskIDunique = tActiveTaskID;
-
-        // alert(tActiveTaskID);
-      });
-    });
-
-    // on tap event handler for mobile specific support.
-    $(document).ready(function() {
-      //console.log("doc ready");
-      $(".task").on("touchstart", function() {
-        //console.log("touch registered")
-        $(this).find(".collapse").collapse("toggle");
-      });
-
-
-
-
-
-
-
-      //listens for submit on edit task form then calls the edittask function
-      $("#edit-task-form").submit(function(){
-        var oTaskID;
-        var oTaskName;
-        var oDueDate;
-        var oDescription;
-
-        // sub a task id directly for testing.
-        oTaskID = tempEditTaskIDunique;
-        oTaskName = $("input[id = 'validation-edit']").val();
-        oDueDate = $("input[id = 'form-group-edit-due']").val();
-        oDescription = $("input[id = 'form-group-edit-desc']").val();
-
-        var taskChangesObj = {
-          taskName: oTaskName,
-          dueDate: oDueDate,
-          description: oDescription,
-          taskID: oTaskID
-        };
-        console.log("oTaskID: " + oTaskID);
-        var tTaskindex = showIndex(taskChangesObj);
-        // console.log(tTaskindex);
-        // console.log("build temp task obj \n"+taskChangesObj);
-        //sube 0 for index for testing.
-
-        // re-enable once dynamic issue with tasks addressed.
-        // masterTasklist.list[tTaskindex].editTask(taskChangesObj);
-        return false;
-      });
-
-
-      $(".listen-for-me-delete-task").click(function(event) {
-        var tActiveDeleteTaskID = $(this).closest("div.task").attr("id");
-        console.log("made it this far 1 : " + tActiveDeleteTaskID);
-
-
-        // alert(tActiveDeleteTaskID);
-      });
-
-
-
-    });
+  // loads nav bar onto page.
+  $(function() {
+    $("#task-nav").load("nav-task.html");
+  });
+  // toggles tool tip that displays description for tasks.
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
   </script>
+
   <title>Tsk-Tsk To-Do App</title>
 </head>
 
