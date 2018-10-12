@@ -66,7 +66,7 @@ Tasklist.prototype.showTask = function(task) {
             <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
             <div class="col-12 collapse" id="edit-this-task-id-${task.taskID}">
               <div class="edit-content">
-                <button type="button" class="btn edit-button" data-toggle="collapse" data-target="#edit-this-task-id-${task.taskID}">Done</button>
+                <button type="button" class="btn edit-button edit-me" data-toggle="modal" data-target="#edit-task-modal">Done</button>
                 <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
               </div>
             </div>
@@ -80,24 +80,68 @@ Tasklist.prototype.showTask = function(task) {
   `)
 };
 
-// Add Task Modal Functionality
-$("#add-task-modal").on("submit", function (e){
-  var taskN = $("#newTaskName").val();
+// Edit Task Modal Functionality
+  $(document).on('click', '.edit-me', function(e) {
+    var that = this;
+    // var taskID = $(this).closest("div.task").attr("id");
+    // var customName = $(this).closest("p#tempTaskName").attr("id");
+    // customName.text("My Custom Task Title");
+    //
+    // for (var i=0; i < masterTasklist.list.length; i++) {
+    //   if (taskID == masterTasklist.list[i].taskID){
+    //     console.log(masterTasklist.list[i]);
+    //   var editTaskIndex = i;
+    //   }
+  });
 
-  if (taskN.replace(/\s+/g,"")){
-    var newTaskN = taskN.trim();
-    var taskD = $("#newTaskDescription").val();
-    var dueD = $("#newDueDate").val();
-    var tempRandomID = Math.floor( (Math.random()*10) + 6);
-    masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
-    e.preventDefault();
-    $("#add-task-modal").modal("hide");
-    e.preventDefault();
-  } else {
-    alert("Please Enter a Valid Task Name");
-    e.preventDefault();
-  }
-});
+    $("#edit-task-modal").on("submit", function (e){
+
+      var customName = $(that).closest("p#tempTaskName");
+      customName.text = $("#editTaskName").val();
+
+      var taskN = $("#editTaskName").val();
+      console.log(taskN);
+      $(this).closest("p#tempTaskName") = taskN.trim();
+      masterTasklist.list[editTaskIndex].description = $("#editTaskDescription").val();
+      // if (taskN.replace(/\s+/g,"")){
+      //   // masterTasklist.list[editTaskIndex].taskName = taskN.trim();
+      //   // masterTasklist.list[editTaskIndex].description = $("#editTaskDescription").val();
+      // //   var dueD = $("#newDueDate").val();
+      // //   var tempRandomID = Math.floor( (Math.random()*10) + 6);
+      // //   masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
+      // //   e.preventDefault();
+      // //   $("#add-task-modal").modal("hide");
+      //   e.preventDefault();
+      // } else {
+      //   alert("Please Enter a Valid Task Name");
+      //   e.preventDefault();
+      // }
+    });
+
+
+
+Tasklist.prototype.bindEvents = function () {
+
+  // Add Task Modal Functionality
+  $("#add-task-modal").on("submit", function (e){
+    var taskN = $("#newTaskName").val();
+
+    if (taskN.replace(/\s+/g,"")){
+      var newTaskN = taskN.trim();
+      var taskD = $("#newTaskDescription").val();
+      var dueD = $("#newDueDate").val();
+      var tempRandomID = Math.floor( (Math.random()*10) + 6);
+      masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
+      e.preventDefault();
+      $("#add-task-modal").modal("hide");
+      e.preventDefault();
+    } else {
+      alert("Please Enter a Valid Task Name");
+      e.preventDefault();
+    }
+  });
+
+}
 
 
 //delete tasks
@@ -160,12 +204,14 @@ document.addEventListener("DOMContentLoaded", function(e){
   if (localStorage.length) {
     console.log("Loading Last List State.");
     window.masterTasklist.list = masterTasklist.getStorage();
+    masterTasklist.bindEvents();
   }
     //if there is nothing in local storage, a new Library will be created, a set list of books will be loaded, and a copy will be stored in local storage
     else {
       console.log("Creating New Tasklist.");
       masterTasklist.addTask(taskNumber1);
       masterTasklist.createStorage();
+      masterTasklist.bindEvents();
     }
 });
 
