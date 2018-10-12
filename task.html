@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="bootstrap-css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -291,9 +292,8 @@
               <!-- need a way to fill existing desc -->
             </div>
             <div class="form-group">
-              <label for="form-group-edit-due">Due Date</label>
-              <input type="text" class="form-control" id="form-group-edit-due" placeholder="...Edit Due Date...">
-              <!-- changed from notes to due date, need to auto fill current due date -->
+              <label for="form-group-input-2">Due Date</label>
+              <input type="text" class="form-control" id="newDueDate" readonly placeholder="...Leave Blank If No Due Date...">
             </div>
         </div>
         <div class="modal-footer">
@@ -312,6 +312,7 @@
   <script src="engine.js"></script>
   <script src="task.js"></script>
   <script src="user.js"></script>
+  <script src="jquery-ui.js"></script>
 </body>
 
 </html>
