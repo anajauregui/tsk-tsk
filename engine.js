@@ -31,25 +31,12 @@ $(document).ready(function() {
     $(this).find(".collapse").collapse("toggle");
   });
 
-  //changed done button on lvl5 to edit and changed the data target to #edit-task-modal, will need to do this to all done buttons.
-  //listens for clicks to items with listen-for-me-edit-task class **** should be applied to all edit buttons **WITHIN** the dropdown for tasks **NOT** the pencil icon
-  //need if statement to send empty string or 0 for id if no id is retrived.
-
-
-
-  // rip this shit out and shove into edit task. refacter edit task so that it no longer accepts an object and edits the object directly via the shit below.
-
   //listens for submit on edit task form then calls the edittask function
   $("#edit-task-form").on("submit", function(){
-
-    // delegation for click events... fix for dynamic content.
-
-    // sub a task id directly for testing.
     var oTaskID = tempEditTaskIDunique;
     var oTaskName = $("#validation-edit").val();
     var oDueDate = $("input[id = 'form-group-edit-due']").val();
     var oDescription = $("input[id = 'form-group-edit-desc']").val();
-
 
     var taskChangesObj = {
       taskName: oTaskName,
@@ -58,7 +45,7 @@ $(document).ready(function() {
       taskID: oTaskID,
     };
     var tTaskindex = showIndex(taskChangesObj); // finds the index of the matching task to change.
-    // ads index key value pair to taskchangesobj
+    // adds index key value pair to taskchangesobj
     taskChangesObj.index = tTaskindex;
     // console.log("oTaskID: " + oTaskID);
     // console.log("showindex return val: "+ tTaskindex);
@@ -67,11 +54,7 @@ $(document).ready(function() {
 
     // console.log(tTaskindex);
     // console.log("build temp task obj \n"+taskChangesObj);
-    //sube 0 for index for testing.
-
-    // re-enable once dynamic issue with tasks addressed.
     masterTasklist.list[tTaskindex].editTask(taskChangesObj);
-    return false;
   });
 });
 
