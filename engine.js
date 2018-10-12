@@ -86,72 +86,168 @@ Tasklist.prototype.addTask = function (task) {
     }
   }
   this.list.push(task);
-  this.showTask(task);
   masterTasklist.createStorage();
+  this.showTask(task, this.sortTask(task))
 
   console.log("Task Added");
   return true;
 };
 
-
-Tasklist.prototype.calcDaysOld = function (dateAdded) {
+Tasklist.prototype.calcDaysOld = function(dateAdded, currentDate) {
   var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
   var dateAdded = new Date(dateAdded).getTime();
   var currentDate = new Date().getTime();
-  var daysOld = Math.abs(dateAdded - currentDate);
+  var daysOld = currentDate - dateAdded;
 
   return Math.round(daysOld / oneDay);
 }
 
-//Populate task list
-Tasklist.prototype.showTask = function(task) {
-  var daysOld = this.calcDaysOld(task.dateAdded);
+Tasklist.prototype.sortTask = function(task) {
+  var daysOld = this.calcDaysOld(task.dateAdded, new Date().toDateString());
+  var daysPastDue = this.calcDaysOld(task.dueDate, new Date().toDateString());
+  var dueDate = new Date(task.dueDate);
+  var dateAdded = new Date(task.dateAdded);
 
-  if(task.dueDate === "Invalid Date"){
-    var month = daysOld.toString();
-    var day = 'Days Old';
-  } else {
-    var dueDate = (task.dueDate).split(' ');
-    var month = dueDate[1];
-    var day = dueDate[2];
+  if(dueDate > dateAdded && daysPastDue < 1) {
+    console.log('This task has a future due date');
+    var level = 1;
+    return level;
   }
 
-  $('.main-task-container').append(`
-    <div id="${task.taskID}" class="container task">
-      <div class="row">
-        <div class="col-12 col-md-10 offset-1 task-content level-1">
-          <div class="row">
-            <div class="col-2 col-md-1 justify-content-center complete-box my-auto ">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </div>
-            <div class="col-7 col-md-9 d-flex">
-              <p class="m-0 align-self-center">${task.taskName}</p>
-            </div>
-            <div class="col-3 col-md-2 d-flex justify-content-center">
-              <div class="align-self-center text-center days-old-count">
-                <p class="m-0">${month}</p>
-                <p class="m-0 days-old">${day}</p>
-                <button type="button" class="btn tooltip-btn" data-toggle="tooltip" data-placement="left" title="${task.description}">...</button>
+  if(task.dueDate === "Invalid Date" && daysOld <= 3) {
+    var level = 1;
+  } else if(task.dueDate) {
+    var level = 1;
+  }
+
+  if(task.dueDate === "Invalid Date" && daysOld > 3) {
+    var level = 2;
+  } else if(task.dueDate && daysPastDue >= 1) {
+    var level = 2;
+  }
+
+  if(task.dueDate === "Invalid Date" && daysOld > 6) {
+    var level = 3;
+  } else if(task.dueDate && daysPastDue >= 2) {
+    var level = 3;
+  }
+
+  if(task.dueDate === "Invalid Date" && daysOld > 9) {
+    var level = 4;
+  } else if(task.dueDate && daysPastDue >= 3) {
+    var level = 4;
+  }
+
+  if(task.dueDate === "Invalid Date" && daysOld > 13) {
+    var level = 5;
+  } else if(task.dueDate && daysPastDue >= 4) {
+    var level = 5
+  }
+  return level
+}
+
+//Populate task list
+Tasklist.prototype.showTask = function(task, level) {
+  var currentDate = new Date().getTime();
+  var daysOld = this.calcDaysOld(task.dateAdded, currentDate);
+
+  if(level > 3) {
+    this.makeHighLevelTask(task, level);
+  } else {
+    if(task.dueDate === "Invalid Date") {
+      var month = daysOld;
+      var day = 'Days Old';
+    } else {
+      var dueDate = (task.dueDate).split(' ');
+      var month = dueDate[1];
+      var day = dueDate[2];
+    }
+
+    $('.main-task-container').append(`
+      <div id=${task.taskID} class="container task">
+        <div class="row">
+          <div class="col-12 col-md-10 offset-1 task-content level-${level}">
+            <div class="row">
+              <div class="col-2 col-md-1 justify-content-center complete-box my-auto ">
+                <input type="checkbox">
+                <span class="checkmark"></span>
               </div>
-            </div>
-            <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
-            <div class="col-12 collapse" id="edit-this-task-id-${task.taskID}">
-              <div class="edit-content">
-                <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
-                <!--data-target="#edit-this-task-id-${task.taskID}"</button>-->
-                <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+              <div class="col-7 col-md-9 d-flex">
+                <p class="m-0 align-self-center">${task.taskName}</p>
+              </div>
+              <div class="col-3 col-md-2 d-flex justify-content-center">
+                <div class="align-self-center text-center days-old-count">
+                  <p class="m-0">${month}</p>
+                  <p class="m-0 days-old">${day}</p>
+                </div>
+              </div>
+
+          <div class="col-10 offset-1 col-sm-7 collapse task-description edit-this-task-${task.taskID}">
+             <!-- TASK DESCRIPTION ID -->
+             <p>${task.description}</p>
+          </div>
+          <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
+            <div class="edit-content btn-group" role="group" aria-label="edit buttons">
+                  <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
+                  <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
-          <img src="assets/edit.png" data-toggle="collapse" data-target="#edit-this-task-id-${task.taskID}">
+          <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
+            <img src="assets/edit.png" data-toggle="collapse" data-target=".edit-this-task-${task.taskID}">
+          </div>
         </div>
       </div>
-    </div>
-  `)
+    `)
+  }
 };
+
+Tasklist.prototype.makeHighLevelTask = function(task, level) {
+  var daysOld = this.calcDaysOld(task.dateAdded, new Date().toDateString());
+  if(task.dueDate === "Invalid Date") {
+    var month = daysOld;
+    var day = 'Days Old';
+  } else {
+    var daysPastDue = this.calcDaysOld(task.dueDate, new Date().toDateString());
+    var month = daysPastDue;
+    var day = 'DAYS OVERDUE';
+    console.log(task);
+  }
+
+  $('.main-task-container').append(`
+    <div id=${task.taskID} class="container task">
+      <div class="row">
+        <div class="col-12 col-md-10 offset-1 task-content level-${level}">
+          <div class="row">
+            <div class="col-1 justify-content-center complete-box my-auto">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </div>
+            <div class="col-10 my-auto">
+              <p class="counter">${month} ${day}</p>
+              <p class="task-name">${task.taskName}</p>
+            </div>
+            <!-- edit buttons, will collapse and expand on click of edit-icon class below, but cannot code that until js is on the table -->
+            <div class="col-10 offset-1 col-sm-7 collapse task-description edit-this-task-${task.taskID}">
+               <!-- TASK DESCRIPTION ID -->
+               <p>${task.description}</p>
+            </div>
+            <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
+              <div class="edit-content btn-group" role="group" aria-label="edit buttons">
+                    <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
+                    <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
+              <img src="assets/edit.png" data-toggle="collapse" data-target=".edit-this-task-${task.taskID}">
+            </div>
+          </div>
+        </div>
+  `)
+}
 
 // Add Task Modal Functionality
 $("#add-task-modal").on("submit", function (e){
@@ -163,7 +259,6 @@ $("#add-task-modal").on("submit", function (e){
     var dueD = $("#newDueDate").val();
     var tempRandomID = Math.floor( (Math.random()*20) + 6);
     masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID));
-    e.preventDefault();
     $("#add-task-modal").modal("hide");
     e.preventDefault();
     masterTasklist.scrollWindow(tempRandomID);
@@ -182,6 +277,7 @@ $( function() {
 //delete tasks
 Tasklist.prototype.deleteTask = function(task){
   var id = task.taskID;
+
   for(var index=0; index<this.list.length; index++) {
     if(this.list[index].taskID === id){
       this.list.splice(index,1);
@@ -189,12 +285,10 @@ Tasklist.prototype.deleteTask = function(task){
       masterTasklist.createStorage();
       return true;
     }
-
   }
   console.log("Task was not removed");
   return false;
 };
-
 
 //edit tasks
 // edit tasks will be a Task prototype, see task.js for fx.
@@ -213,6 +307,7 @@ Tasklist.prototype.getStorage = function(){
   console.log(jsonObj);
   //runs through each item in jsonObj and recreates them as a task object, then pushes re-prototyped tasks to taskObjs array
   for (var i = 0; i < jsonObj.length; i++) {
+    //console.log(jsonObj[i].dueDate);
     taskObjs.push(new Task(
       jsonObj[i].taskName,
       //feeding null values as an empty string bypasses a local storage js error which stops the loop because the item is undefined. we should resolve this more elegantly when we start using a database
@@ -232,7 +327,11 @@ document.addEventListener("DOMContentLoaded", function(e){
   window.masterTasklist = new Tasklist();
   if (localStorage.length) {
     console.log("Loading Last List State.");
-    window.masterTasklist.list = masterTasklist.getStorage();
+    masterTasklist.list = masterTasklist.getStorage()
+    for(var i = 0; i < masterTasklist.list.length; i++) {
+      masterTasklist.showTask(masterTasklist.list[i]);
+    }
+
   }
     //if there is nothing in local storage, a new Library will be created, a set list of books will be loaded, and a copy will be stored in local storage
     else {
