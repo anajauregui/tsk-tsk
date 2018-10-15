@@ -235,12 +235,17 @@ $("#add-task-modal").on("submit", function (e){
     masterTasklist.addTask(new Task(newTaskN, dueD, taskD, tempRandomID, addD));
     $("#add-task-modal").modal("hide");
     e.preventDefault();
+    clearForm();
     masterTasklist.scrollWindow(tempRandomID);
   } else {
     alert("Please Enter a Valid Task Name");
     e.preventDefault();
   }
 });
+
+function clearForm() {
+  $("#add-task-modal").find('input[type="text"]').val("");
+}
 
 // Date picker Functionality
 $( function() {
