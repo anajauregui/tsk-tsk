@@ -62,6 +62,7 @@ Tasklist.prototype.addTask = function (task) {
     }
   }
   this.list.push(task);
+  console.log(new Date(task.dateAdded).toDateString());
   masterTasklist.createStorage();
   this.showTask(task, this.sortTask(task))
 
@@ -126,7 +127,6 @@ Tasklist.prototype.sortTask = function(task) {
 Tasklist.prototype.showTask = function(task, level) {
   var currentDate = new Date().getTime();
   var daysOld = this.calcDaysOld(task.dateAdded, currentDate);
-
   if(level > 3) {
     this.makeHighLevelTask(task, level);
   } else {
@@ -157,12 +157,12 @@ Tasklist.prototype.showTask = function(task, level) {
                   <p class="m-0 days-old">${day}</p>
                 </div>
               </div>
-            <div class="col-10 offset-1 col-sm-7 collapse task-description edit-this-task-${task.taskID}">
+              <div class="col-10 offset-1 col-sm-7 collapse task-description edit-this-task-${task.taskID}">
                <p>${task.description}</p>
-            </div>
-          <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
-            <div class="edit-content btn-group" role="group" aria-label="edit buttons">
-                  <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
+             </div>
+             <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
+             <div class="edit-content btn-group" role="group" aria-label="edit buttons">
+                <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
                   <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
                 </div>
               </div>
@@ -272,49 +272,32 @@ Tasklist.prototype.deleteTask = function(task){
 //edit tasks
 
 //local storage
-Tasklist.prototype.createStorage = function(){
-  localStorage.setItem('masterTasklist',JSON.stringify(this.list));
+Tasklist.prototype.createStorage = function() {
+  console.log(this.list);
+  localStorage.setItem('masterTasklist', JSON.stringify(this.list));
   return console.log("Tasklist Saved.");
 };
 
-Tasklist.prototype.getStorage = function(){
-  //creates empty array
-  var taskObjs = [];
-  //gets local storage and stores it as a var
-  var jsonObj = JSON.parse(localStorage.getItem("masterTasklist"));
-  console.log(jsonObj);
-  //runs through each item in jsonObj and recreates them as a task object, then pushes re-prototyped tasks to taskObjs array
-  for (var i = 0; i < jsonObj.length; i++) {
-    //console.log(jsonObj[i].dueDate);
-    taskObjs.push(new Task(
-      jsonObj[i].taskName,
-      //feeding null values as an empty string bypasses a local storage js error which stops the loop because the item is undefined. we should resolve this more elegantly when we start using a database
-      jsonObj[i].dueDate || "",
-      jsonObj[i].description,
-      jsonObj[i].taskID,
-      jsonObj[i].userID || "",
-      jsonObj[i].completed,
-      jsonObj[i].dateAdded
-    ));
+Tasklist.prototype.getStorage = function() {
+  if(localStorage.length) {
+    var parsedTasks = JSON.parse(localStorage.getItem("masterTasklist"));
+    for(var i = 0; i < parsedTasks.length; i++) {
+      // console.log((new Date(parsedTasks[i].dateAdded).toDateString()).split(' ').slice(1).join(' '));
+      // console.log(typeof(parsedTasks[i].dateAdded));
+      // console.log(parsedTasks[i]);
+      this.addTask(new Task (
+        parsedTasks[i].taskName,
+        parsedTasks[i].dueDate || "",
+        parsedTasks[i].description,
+        parsedTasks[i].taskID,
+        new Date(parsedTasks[i].dateAdded)
+      )
+     )
+    }
   }
-  //returns taskified array (this is what gets defined as the list when the page loads)
-  return taskObjs;
 };
 
 document.addEventListener("DOMContentLoaded", function(e){
   window.masterTasklist = new Tasklist();
-  if (localStorage.length) {
-    console.log("Loading Last List State.");
-    masterTasklist.list = masterTasklist.getStorage()
-    for(var i = 0; i < masterTasklist.list.length; i++) {
-      masterTasklist.showTask(masterTasklist.list[i]);
-    }
-
-  }
-    //if there is nothing in local storage, a new Library will be created, a set list of books will be loaded, and a copy will be stored in local storage
-    else {
-      console.log("Creating New Tasklist.");
-      masterTasklist.addTask(taskNumber1);
-      masterTasklist.createStorage();
-    }
+  masterTasklist.getStorage();
 });

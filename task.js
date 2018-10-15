@@ -8,7 +8,7 @@ function Task(taskName, dueDate, description, taskID, dateAdded) {
   this.dueDate = new Date(dueDate).toDateString();
   this.description = description;
   this.taskID = taskID;
-  this.dateAdded = new Date(dateAdded).toDateString();//eventually this will just be new Date() with no param passed in and that will be the current date.
+  this.dateAdded = new Date(dateAdded);//eventually this will just be new Date() with no param passed in and that will be the current date.
 };
 
 
