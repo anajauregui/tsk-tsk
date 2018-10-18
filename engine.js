@@ -18,12 +18,36 @@ var tempDeleteTaskIDunique;
 
 $(".main-task-container").on('click', '.task', clickListener);
 
-function clickListener() {
-  $(".listen-for-me-edit-task").on("click", function(event) {
-    tempEditTaskIDunique = $(this).closest("div.task").attr("id");
-    console.log("Heard click from taskID: " + tempEditTaskIDunique);
-  });
-};
+
+function clickListener(){
+  //event listener for edit clicks
+        // console.log("anyone home?");
+        $(".listen-for-me-edit-task").on("click", function(event) {
+          tempEditTaskIDunique = $(this).closest("div.task").attr("id");
+          console.log("Heard click from taskID: " + tempEditTaskIDunique);
+          // console.log($("#"+tActiveTaskID));
+          // alert(tActiveTaskID);
+        });
+
+        $(".listen-for-me-delete-task").on("click", function(event) {
+          var that = this;
+          deleteTaskID = $(this).closest("div.task").attr("id");
+
+          $("#whyNoWork").on("click", function () {
+            taskContainer= $(that).closest(".container").remove();
+            for (var i = 0; i < masterTasklist.list.length; i++) {
+              if (deleteTaskID == masterTasklist.list[i].taskID){
+                masterTasklist.list.splice(i, 1);
+                masterTasklist.createStorage();
+              }
+            }
+            $("#delete-task-modal").modal("hide");
+          });
+        });
+
+
+}
+
 
 // on tap event handler for mobile specific support.
 $(document).ready(function() {
@@ -157,15 +181,15 @@ Tasklist.prototype.showTask = function(task, level) {
                   <p class="m-0 days-old">${day}</p>
                 </div>
               </div>
+
               <div class="col-10 offset-1 col-sm-7 collapse task-description edit-this-task-${task.taskID}">
                <p>${task.description}</p>
              </div>
              <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
-             <div class="edit-content btn-group" role="group" aria-label="edit buttons">
-                <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
-                  <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
-                </div>
-              </div>
+               <div class="edit-content btn-group" role="group" aria-label="edit buttons">
+                  <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
+               </div>
+             </div>
             </div>
           </div>
           <div class="col-1 edit-container edit-icon d-none d-sm-none d-md-block">
@@ -209,7 +233,7 @@ Tasklist.prototype.makeHighLevelTask = function(task, level) {
             <div class="col-12 col-sm-4 collapse edit-this-task-${task.taskID}">
               <div class="edit-content btn-group" role="group" aria-label="edit buttons">
                     <button type="button" class="btn edit-button listen-for-me-edit-task" data-toggle="modal" data-target="#edit-task-modal">Edit</button>
-                    <button type="button" class="btn edit-button" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
+                    <button type="button" class="btn edit-button listen-for-me-delete-task" data-toggle="modal" data-target="#delete-task-modal">Delete</button>
                   </div>
                 </div>
               </div>
