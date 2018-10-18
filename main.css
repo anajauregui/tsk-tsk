@@ -194,7 +194,18 @@
 .task-description p {
   font-size: .6em;
   padding-right: 1vw;
+}
+
+.level-5 > .row > .col-10.task-description {
   margin: 0px;
+  padding: 0px;
+  line-height: 1;
+}
+
+.level-4 > .row > .col-10.task-description {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1;
 }
 
 .edit-button {
@@ -422,7 +433,7 @@ body {
     justify-content: space-around;
   }
 
-  .level-5 > .row > .col-10 {
+  .level-5 > .row {
     font-size: 1.875rem;
     padding: 13% 0;
   }
